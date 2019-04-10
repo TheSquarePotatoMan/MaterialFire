@@ -2,7 +2,7 @@
 + Removes scrollbar, menu button, page action button and full screen notification
 + Overflow button is used as a 'replacement' for the menu button
 + Replaces overflow, new tab and close-tab icons
-+ Edits and adds animations to the tabs, urlbar and all buttons *visible in the screenshot.
++ Edits and adds animations to the tabs, urlbar and all buttons *visible in the screenshot*.
 
 ### notes 
 Tested with Firefox 66 on Windows 10.
