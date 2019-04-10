@@ -10,10 +10,10 @@ Sometimes there's a glitch where the navbar becomes completely unresponsive to m
 
 ### screenshots:
 
-Dark mode:
+Dark mode
 ![](screenshots/darkmode.png)
  
-Light mode:
+Light mode
 ![](screenshots/lightmode.png)
 
 
