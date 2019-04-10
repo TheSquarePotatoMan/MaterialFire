@@ -1,4 +1,5 @@
 # MaterialFire
++ I have no idea if, let alone how much, this affects power consumption 
 + Removes scrollbar, menu button, page action button and full screen notification
 + Overflow button is used as a 'replacement' for the menu button
 + Replaces overflow, new tab and close-tab icons
