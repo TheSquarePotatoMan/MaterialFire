@@ -24,4 +24,5 @@ Light mode
 + Type 'about:profiles' in the Firefox urlbar and hit enter
 + Open the root directory folder of your profile
 + Open the 'chrome' folder, or create it if it doesn't exist
-+ Copy the file 'chrome.css' and the folder 'material' into the chrome folder
++ Copy the file 'chrome.css'(or its contents if you already have a chrome.css file) and the folder 'material' into the chrome folder
++ Restart Firefox
