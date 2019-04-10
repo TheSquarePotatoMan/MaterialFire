@@ -10,7 +10,7 @@
 + Currently there's an issue where the navbar becomes completely unresponsive to mouse hovers and clicks and you will (usually) need to   restart Firefox to fix it.
 + I have no idea if or how this theme affects power consumption 
 
-### screenshots:
+### screenshots
 
 Dark mode
 ![](screenshots/darkmode.png)
