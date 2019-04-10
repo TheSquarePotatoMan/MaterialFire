@@ -1,16 +1,5 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-/* 
- * removes scrollbar
- */
-
-#content-deck browser{
-    margin-right:-17px!important;
-    margin-bottom:-17px!important;
-    overflow-y:scroll;
-    overflow-x:hidden;
-}
-
 /*
  * Tab animations
  */ 
@@ -148,9 +137,10 @@
     transition: none !important;
 }
 
-/* code to make back button same size as forward button in all modes? */
+/* code to make back button same size as forward button in all modes */
 
 #back-button > .toolbarbutton-icon {
+   transform: scale(1.0) !important;
 }
 
 /* forward button */
@@ -407,16 +397,4 @@
 #tabbrowser-tabs[movingtab] > .tabbrowser-tab[visuallyselected]::before,
 .tabbrowser-tab[visuallyselected]::after {
  visibility: hidden !important;
-}
-
-
-/* ------------------------------------------------------------------- */
-
-/* 
- * hide fullscreen popup
- */
-
-@-moz-document url(chrome://browser/content/browser.xul) {
-#fullscreen-warning {
-  display: none !important;
 }
