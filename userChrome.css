@@ -1,0 +1,422 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* 
+ * removes scrollbar
+ */
+
+#content-deck browser{
+    margin-right:-17px!important;
+    margin-bottom:-17px!important;
+    overflow-y:scroll;
+    overflow-x:hidden;
+}
+
+/*
+ * Tab animations
+ */ 
+
+
+#TabsToolbar .tabbrowser-tab:not([pinned]):not(:hover) {
+  opacity: 0.6;
+  transition: 0.2s ease-in !important; 
+}
+
+#TabsToolbar .tabbrowser-tab:not([pinned]):hover {
+  opacity: 0.8;
+  transition: 0.1s linear !important; 
+}
+
+#TabsToolbar .tabbrowser-tab[visuallyselected] {
+  opacity: 1.0 !important;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2) !important;
+}
+
+#TabsToolbar .tab-close-button {
+   background: none !important;
+   list-style-image: url("material/close.svg") !important;
+   filter: grayscale(100%);
+   width: 22px !important;
+   height: 22px !important;
+   padding: 6px !important;
+   position: relative !important;
+   margin-right: -7px !important;
+}
+
+.tabbrowser-tab:not(:hover) .tab-close-button { 
+   opacity: 0 !important; 
+   transition: 0.2s ease-in !important; 
+}
+
+.tabbrowser-tab:hover .tab-close-button {
+  opacity: 0.6 !important;
+  display: block !important;
+  transition: 0.1s linear !important; 
+}
+
+.tabbrowser-tab .tab-close-button:hover {
+  filter: grayscale(0%) !important;
+  opacity: 1.0 !important;
+  transition: 0.1s linear !important; 
+}
+
+.tabbrowser-tab .tab-close-button:active {
+  filter: brightness(75%) !important;
+}
+
+
+/* ------------------------------------------------------------------- */ 
+
+/* 
+ * overflow icon replacement
+ */
+
+#nav-bar-overflow-button > .toolbarbutton-icon { 
+  background: none !important;
+  list-style-image: url("material/menubutton.svg") !important;
+  transform: scale(0.85);
+  
+}
+
+#nav-bar-overflow-button:not(:hover) > .toolbarbutton-icon { 
+  filter: grayscale(100%);
+  opacity: 0.8;
+  transition: 0.2s linear !important;
+}
+
+#nav-bar-overflow-button:hover > .toolbarbutton-icon { 
+  filter: grayscale(0%);
+  opacity: 1.0;
+  transition: 0.1s ease-in !important;
+}
+
+#nav-bar-overflow-button:active > .toolbarbutton-icon { 
+  filter: brightness(75%);
+}
+
+/* ------------------------------------------------------------------- */
+
+/*
+ * nav buttons animation
+ */
+
+/* BACK BUTTON ANIMATION */
+/* disables default hover */
+
+#back-button > .toolbarbutton-icon {
+    background: unset !important;
+    border-radius: 100% !important;
+    box-shadow: unset !important;
+    border: 0 !important;
+}
+
+/*adds disabled state */
+
+#back-button[disabled] > .toolbarbutton-icon {
+    opacity: 0.5 !important;
+}
+
+#back-button[disabled]:active > .toolbarbutton-icon {
+    opacity: 1.0 !important;
+    fill: rgba(255, 50, 50, 1.0) !important;
+    transition: none !important;
+}
+ 
+/*adds enabled state*/
+
+#back-button[enabled] > .toolbarbutton-icon {
+    opacity: 1.0 !important;
+}
+
+/* adds hover state */
+
+#back-button:hover:not([disabled]) > .toolbarbutton-icon {
+    fill: rgba(80, 150, 220, 1) !important;
+    transition: 0.1s ease-in; 
+}
+
+/* adds unhover state */
+
+#back-button > .toolbarbutton-icon:not(:hover) {
+    background-color: transparent;
+    transition: 0.2s ease-in !important; 
+}
+
+/* adds click state */
+
+#back-button:active:not([disabled]) > .toolbarbutton-icon {
+    filter: brightness(75%);
+    transition: none !important;
+}
+
+/* code to make back button same size as forward button in all modes? */
+
+#back-button > .toolbarbutton-icon {
+}
+
+/* forward button */
+
+/* disables default behavior */
+
+#forward-button > .toolbarbutton-icon {
+    background: unset !important;
+}
+
+/*adds disabled state */
+
+#forward-button[disabled] > .toolbarbutton-icon {
+    opacity: 0.5 !important;
+    transition: linear 0.2s;
+}
+
+#forward-button[disabled]:active > .toolbarbutton-icon {
+    opacity: 1.0 !important;
+    fill: rgba(255, 50, 50, 1.0) !important;
+    transition: none !important;
+}
+ 
+/*adds enabled state*/
+
+#forward-button[enabled] > .toolbarbutton-icon {
+    opacity: 1.0 !important;
+    transition: linear 0.05s;
+}
+
+/* adds hover state */
+
+#forward-button:hover:not([disabled]) > .toolbarbutton-icon {
+    fill: rgba(80, 150, 220, 1) !important;
+    transition: 0.1s ease-in; 
+}
+
+/* adds unhover state */
+
+#forward-button > .toolbarbutton-icon:not(:hover) {
+    background-color: transparent;
+    transition: 0.2s ease-in !important; 
+}
+
+/* adds click state */
+
+#forward-button:active:not([disabled]) > .toolbarbutton-icon {
+    filter: brightness(75%);
+    transition: none !important;
+}
+
+/*
+ * reload/stop button animation 
+ */ 
+
+#reload-button > .toolbarbutton-icon {
+   background: unset !important;
+}
+
+#stop-button > .toolbarbutton-icon {
+   background: none !important;
+}
+
+
+#reload-button:hover:not([disabled]) > .toolbarbutton-icon {
+   fill: rgba(80, 150, 220, 1);
+   transition: linear 0.1s;
+}
+
+#stop-button:hover:not([disabled]) > .toolbarbutton-icon {
+    fill: rgba(255, 50, 50, 1);
+    transition: linear 0.1s;
+}
+
+#reload-button:not(:hover):not([disabled]) > .toolbarbutton-icon {
+   transition: linear 0.2s;
+}
+
+#stop-button:not(:hover):not([disabled]) > .toolbarbutton-icon {
+    transition: linear 0.2s; 
+}
+
+#reload-button:active:not([disabled]) > .toolbarbutton-icon {
+    filter: brightness(75%);
+    transition: none !important;
+}
+
+#stop-button:active:not([disabled]) > .toolbarbutton-icon {
+    filter: brightness(75%);
+    transition: none !important;
+}
+
+
+/* ------------------------------------------------------------------- */
+
+
+/*
+ * removes hamburger menu
+ */
+
+#PanelUI-button {
+  display: none !important;
+}
+
+/* ------------------------------------------------------------------- */
+
+
+/*
+ * removes adress bar button
+ */
+
+#pageActionButton {
+    display: none;
+}
+
+
+/* ------------------------------------------------------------------- */
+
+
+
+/* 
+ * hide highlight above tabs 
+ */
+
+
+#main-window:not([customizing]) .tab-line {
+  display: none !important;
+}
+
+#urlbar, .searchbar-textbox {
+    border: 0 !important;
+    border-radius: 2em !important;
+    box-shadow: 0 0 0 0px rgba(0, 0, 0, 0) !important;
+    background-color: unset;
+}
+
+#urlbar:hover {
+    background-color: rgba(130, 130, 130, 0.12) !important;
+    opacity: 0.7;
+    transition: 0.1s linear;
+}
+
+#urlbar:not(:hover) {
+    background-color: transparent !important;
+    opacity: 0.7;
+    transition: 0.2s ease-in;
+}
+
+#urlbar[focused=true] {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    opacity: 0.7 !important;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5) !important;
+    transition: 0.1s linear;
+}
+
+/* ------------------------------------------------------------------- */
+    
+
+/* Tab underline */
+#main-window:not([customizing]) .tab-background {
+  box-shadow: inset 0 -1px rgba(0, 0, 0, var(--tab-underline-opacity));
+}
+
+/* 1px bottom border */
+#TabsToolbar:not([collapsed="true"]) + #nav-bar {
+  box-shadow: 0 -1px 0 #6662 !important;
+}
+
+
+/* ------------------------------------------------------------------- */
+
+/*
+ * new tab button animation
+ */
+
+.tabs-newtab-button > .toolbarbutton-icon { 
+  background: none !important;
+  list-style-image: url("material/add.svg") !important;
+  transform: scale(0.8);
+}
+
+.tabs-newtab-button:not(:hover) {
+  filter: grayscale(100%);
+  opacity: 0.5;
+  transition: 0.2s ease-in; 
+}
+
+.tabs-newtab-button:hover {
+  transition: linear 0.1s !important; 
+}
+
+.tabs-newtab-button:active {
+  filter: brightness(75%);
+  transition: none !important;
+}
+
+
+
+/* ------------------------------------------------------------------- */
+
+/*
+ * Hide HTTPS certificate label
+ */
+
+
+#identity-box:not(:hover) {
+  padding-inline-end: 0px !important;
+  margin-right: 8px !important;
+}
+#identity-box:not(:hover) #identity-icon-labels {
+  width: 0px;
+} 
+#identity-box:not(:hover) #identity-icon-labels #identity-icon-country-label {
+  display: none;
+}
+
+
+/* ------------------------------------------------------------------- */
+
+
+/*
+ * Remove border between Tabs and NavBar
+ */
+
+#nav-bar {
+  border: none !important;
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1) !important;
+  /*margin-top: -1px !important;  / bugs when a tab is dragged */
+  margin-bottom: -1px !important;
+}   
+
+
+/* ------------------------------------------------------------------- */
+
+/* 
+ * Emulate Opera tab dividers
+ */
+
+
+.tabbrowser-tab::after,
+.tabbrowser-tab::before {
+  margin-top: 9px !important;
+  margin-bottom: 9px !important;
+}
+
+.tabbrowser-tab:hover::after,
+#tabbrowser-tabs:not([movingtab]) > .tabbrowser-tab[beforehovered]::after,
+.tabbrowser-tab[multiselected]::after,
+#tabbrowser-tabs:not([movingtab]) > .tabbrowser-tab[before-multiselected]::after { 
+  visibility: hidden !important;
+}
+
+#tabbrowser-tabs:not([movingtab]) > .tabbrowser-tab[beforeselected-visible]::after,
+#tabbrowser-tabs[movingtab] > .tabbrowser-tab[visuallyselected]::before,
+.tabbrowser-tab[visuallyselected]::after {
+ visibility: hidden !important;
+}
+
+
+/* ------------------------------------------------------------------- */
+
+/* 
+ * hide fullscreen popup
+ */
+
+@-moz-document url(chrome://browser/content/browser.xul) {
+#fullscreen-warning {
+  display: none !important;
+}
