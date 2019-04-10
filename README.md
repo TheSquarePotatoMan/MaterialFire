@@ -1,15 +1,15 @@
 # MaterialFire
-+ I have no idea if, let alone how much, this affects power consumption 
 + Removes scrollbar, menu button, page action button and full screen notification
 + Overflow button is used as a 'replacement' for the menu button
-+ Replaces overflow, new tab and close-tab icons
 + Removes back button background in normal and touch mode
-+ Edits and adds animations to the tabs, urlbar and all buttons *visible in the screenshots*
++ Edits and adds animations to the tabs, urlbar and the buttons *visible in the screenshots*
++ Adds some stylistic changes
 
 ### notes 
-Tested with Firefox 66 on Windows 10.
-Custom themes will edit this theme's files and some add-ons(at least for the scrollbar) might conflict with it.
-Currently there's an issue where the navbar becomes completely unresponsive to mouse hovers and clicks and you will (usually) need to restart Firefox to fix it.
++ Tested with Firefox 66 on Windows 10.
++ Custom themes will edit this theme's files and some add-ons(at least for the scrollbar) might conflict with it.
++ Currently there's an issue where the navbar becomes completely unresponsive to mouse hovers and clicks and you will (usually) need to   restart Firefox to fix it.
++ I have no idea if or how this theme affects power consumption 
 
 ### screenshots:
 
