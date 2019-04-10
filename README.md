@@ -6,7 +6,7 @@
 
 ### notes 
 Tested with Firefox 66 on Windows 10.
-Custom themes and add-ons can change this theme.
+Custom themes and add-ons will edit this theme's files or conflict with it.
 Sometimes there's a glitch where the navbar becomes completely unresponsive to mouse hovers and clicks and you will (usually) need to restart Firefox.
 
 ### screenshots:
