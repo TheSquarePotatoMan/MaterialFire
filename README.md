@@ -1,6 +1,5 @@
 # MaterialFire
-+ Removes scrollbar, menu button, page action button and full screen notification
-+ Overflow button is used as a 'replacement' for the menu button
++ Removes menu button and page action button for a cleaner look, the overflow button is used as a replacement for the menu button
 + Removes back button background in normal and touch mode
 + Edits and adds animations to the tabs, urlbar and the buttons *visible in the screenshots*
 + Adds some stylistic changes
