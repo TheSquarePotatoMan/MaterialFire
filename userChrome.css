@@ -6,13 +6,18 @@
 
 
 #TabsToolbar .tabbrowser-tab:not([pinned]):not(:hover) {
-  opacity: 0.6;
+  opacity: 0.7;
   transition: 0.2s ease-in !important; 
 }
 
-#TabsToolbar .tabbrowser-tab:not([pinned]):hover {
-  opacity: 0.8;
+:root #tabbrowser-tabs:active .tabbrowser-tab[visuallyselected] {
+  opacity: 1.0;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.15) !important;
   transition: 0.1s linear !important; 
+}
+
+#TabsToolbar .tabbrowser-tab:not([pinned]):not(:active) {
+  transition: 0.2s ease-in !important; 
 }
 
 #TabsToolbar .tabbrowser-tab[visuallyselected] {
@@ -37,7 +42,7 @@
 }
 
 .tabbrowser-tab:hover .tab-close-button {
-  opacity: 0.6 !important;
+  opacity: 0.7 !important;
   display: block !important;
   transition: 0.1s linear !important; 
 }
@@ -137,10 +142,9 @@
     transition: none !important;
 }
 
-/* code to make back button same size as forward button in all modes */
+/* code to make back button same size as forward button in all modes? */
 
 #back-button > .toolbarbutton-icon {
-   transform: scale(1.0) !important;
 }
 
 /* forward button */
@@ -262,7 +266,7 @@
 
 
 /* 
- * hide highlight above tabs 
+ * Urlbar styling 
  */
 
 
@@ -292,25 +296,12 @@
 #urlbar[focused=true] {
     background-color: rgba(255, 255, 255, 0.1) !important;
     opacity: 0.7 !important;
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5) !important;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3) !important;
     transition: 0.1s linear;
 }
 
 /* ------------------------------------------------------------------- */
     
-
-/* Tab underline */
-#main-window:not([customizing]) .tab-background {
-  box-shadow: inset 0 -1px rgba(0, 0, 0, var(--tab-underline-opacity));
-}
-
-/* 1px bottom border */
-#TabsToolbar:not([collapsed="true"]) + #nav-bar {
-  box-shadow: 0 -1px 0 #6662 !important;
-}
-
-
-/* ------------------------------------------------------------------- */
 
 /*
  * new tab button animation
@@ -361,16 +352,52 @@
 /* ------------------------------------------------------------------- */
 
 
-/*
- * Remove border between Tabs and NavBar
+/* 
+ * Removes borders
  */
 
-#nav-bar {
+
+#navigator-toolbox {
   border: none !important;
   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1) !important;
   /*margin-top: -1px !important;  / bugs when a tab is dragged */
   margin-bottom: -1px !important;
 }   
+
+
+#nav-bar {
+  /*margin-top: -1px !important;  / bugs when a tab is dragged */
+  margin-bottom: -1px !important;
+}   
+
+/* removes border under tabs */
+
+#TabsToolbar, #nav-bar {
+  border: none !important;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0) !important;
+}
+
+#PersonalToolbar {
+  transform: scaleY(1.07) !important;
+}
+
+
+.bookmark-item {
+   transform: scaleY(0.934579) !important;
+   padding: 5px !important;
+   border-radius: 2em !important;
+   transition: 0.2s ease-in !important;
+}
+
+.bookmark-item:hover {
+    background-color: rgba(130, 130, 130, 0.12) !important;
+    transition: 0.1s linear !important;
+}
+
+.bookmark-item:active {
+    background-color: rgba(130, 130, 130, 0.2) !important;
+}
+
 
 
 /* ------------------------------------------------------------------- */
