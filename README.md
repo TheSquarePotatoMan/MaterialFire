@@ -1,13 +1,17 @@
 # MaterialFire
 
 
+### notes 
 Tested with Firefox 66 on Windows 10
 Sporadically glitches so that the navbar becomes unresponsive to mouse hovers and clicks.
 
- Dark mode
-![](screenshots/dark_mode.png)
- Light mode
-![](screenshots/light_mode.png)
+### screenshots:
+
+Dark mode:
+![](screenshots/darkmode.png)
+ 
+Light mode:
+![](screenshots/lightmode.png)
 
 
 ### How to apply
