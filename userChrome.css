@@ -41,7 +41,7 @@
    transition: 0.2s ease-in !important; 
 }
 
-.tabbrowser-tab:hover .tab-close-button {
+.tabbrowser-tab:not([pinned]):hover .tab-close-button {
   opacity: 0.6 !important;
   display: block !important;
   transition: 0.1s linear !important; 
