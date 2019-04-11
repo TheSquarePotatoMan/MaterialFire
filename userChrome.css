@@ -117,7 +117,7 @@
 
 #back-button[disabled]:active > .toolbarbutton-icon {
     opacity: 1.0 !important;
-    fill: rgba(255, 50, 50, 1.0) !important;
+    fill: rgba(229, 76, 45, 1.0) !important;
     transition: none !important;
 }
  
@@ -170,7 +170,7 @@
 
 #forward-button[disabled]:active > .toolbarbutton-icon {
     opacity: 1.0 !important;
-    fill: rgba(255, 50, 50, 1.0) !important;
+    fill: rgba(229, 76, 45, 1.0) !important;
     transition: none !important;
 }
  
@@ -221,7 +221,7 @@
 }
 
 #stop-button:hover:not([disabled]) > .toolbarbutton-icon {
-    fill: rgba(255, 50, 50, 1);
+    fill: rgba(229, 76, 45, 1);
     transition: linear 0.1s;
 }
 
