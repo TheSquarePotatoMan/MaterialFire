@@ -1,5 +1,7 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
+/* ------------------------------1------------------------------------ */
+
 /*
  * Tab animations
  */ 
@@ -28,7 +30,6 @@
 #TabsToolbar .tab-close-button {
    background: none !important;
    list-style-image: url("material/close.svg") !important;
-   filter: grayscale(100%);
    width: 22px !important;
    height: 22px !important;
    padding: 6px !important;
@@ -37,19 +38,22 @@
 }
 
 .tabbrowser-tab:not(:hover) .tab-close-button { 
-   opacity: 0 !important; 
+   opacity: 0 !important;
    transition: 0.2s ease-in !important; 
 }
 
 .tabbrowser-tab:not([pinned]):hover .tab-close-button {
-  opacity: 0.6 !important;
   display: block !important;
   transition: 0.1s linear !important; 
 }
 
+.tabbrowser-tab .tab-close-button:not(hover) {
+  filter: opacity(60%) grayscale(100%) !important;
+  transition: 0.2s linear !important; 
+}
+
 .tabbrowser-tab .tab-close-button:hover {
-  filter: grayscale(0%) !important;
-  opacity: 1.0 !important;
+  filter: opacity(100%) grayscale(0%) !important;
   transition: 0.1s linear !important; 
 }
 
@@ -58,7 +62,8 @@
 }
 
 
-/* ------------------------------------------------------------------- */ 
+/* -------------------------------2----------------------------------- */ 
+
 
 /* 
  * overflow icon replacement
@@ -87,7 +92,8 @@
   filter: brightness(75%);
 }
 
-/* ------------------------------------------------------------------- */
+/* -----------------------------3------------------------------------- */
+
 
 /*
  * nav buttons animation
@@ -238,7 +244,7 @@
 }
 
 
-/* ------------------------------------------------------------------- */
+/* ------------------------------4------------------------------------ */
 
 
 /*
@@ -249,7 +255,7 @@
   display: none !important;
 }
 
-/* ------------------------------------------------------------------- */
+/* -------------------------------5----------------------------------- */
 
 
 /*
@@ -261,7 +267,7 @@
 }
 
 
-/* ------------------------------------------------------------------- */
+/* -------------------------------6----------------------------------- */
 
 
 
@@ -300,7 +306,7 @@
     transition: 0.1s linear;
 }
 
-/* ------------------------------------------------------------------- */
+/* -----------------------------7------------------------------------- */
     
 
 /*
@@ -314,8 +320,7 @@
 }
 
 .tabs-newtab-button:not(:hover) {
-  filter: grayscale(100%);
-  opacity: 0.5;
+  filter: opacity(60%) grayscale(100%);
   transition: 0.2s ease-in; 
 }
 
@@ -330,7 +335,7 @@
 
 
 
-/* ------------------------------------------------------------------- */
+/* -------------------------------8----------------------------------- */
 
 /*
  * Hide HTTPS certificate label
@@ -349,7 +354,7 @@
 }
 
 
-/* ------------------------------------------------------------------- */
+/* ------------------------------9------------------------------------ */
 
 
 /* 
@@ -398,9 +403,101 @@
     background-color: rgba(130, 130, 130, 0.2) !important;
 }
 
+.browserContainer > findbar {
+  opacity: 0.99999 !important;
+  border: none !important;
+  box-shadow: 0px -2px 3px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* ------------------------------10------------------------------------ */
+
+/*
+ * findbar styling
+ */
+
+.findbar-closebutton > .toolbarbutton-icon {
+   background: none !important;
+   list-style-image: url("material/close.svg") !important;
+   filter: grayscale(100%) opacity(60%) !important;
+   transform: scale(0.5);
+   transition: 0.2s ease-in !important;
+}
+
+.findbar-closebutton:hover .toolbarbutton-icon {
+  filter: grayscale(0%) !important;
+  transition: 0.1s linear !important; 
+}
+
+.findbar-closebutton:active {
+  filter: brightness(75%) !important;
+}
+
+.findbar-button {
+   border-radius: 2em !important;
+   transition: 0.2s ease-in !important;
+}
+
+.findbar-button:hover {
+    background-color: rgba(130, 130, 130, 0.12) !important;
+    transition: 0.1s linear !important;
+}
+
+.findbar-button:active {
+    background-color: rgba(130, 130, 130, 0.2) !important;
+}
 
 
-/* ------------------------------------------------------------------- */
+/*
+ *  If you want the find bar (word search) on top add this:          .browserContainer > findbar {
+ *                                                                   -moz-box-ordinal-group: 0;
+ *                                                                   }
+ */ 
+
+.findbar-textbox {
+   transform: scale(1.2) !important;
+   transform-origin: left;
+   border: none !important;
+   border-radius: 2em !important;
+   transition: 0.2s ease-in !important;
+}
+
+.findbar-textbox:not(:hover) {
+    background: transparent !important;
+    transition: 0.1s linear !important;
+}
+
+.findbar-textbox:hover {
+    background-color: rgba(130, 130, 130, 0.12) !important;
+    transition: 0.1s linear !important;
+}
+
+.findbar-textbox[focused=true] {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    opacity: 0.7 !important;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3) !important;
+    transition: 0.1s linear;
+}
+
+.findbar-find-previous {
+  padding-left: 40px !important;
+}
+
+.findbar-find-next, .findbar-find-previous {
+  border: none !important;
+  background: none !important;
+  box-shadow: none !important;
+}
+
+.findbar-find-next:not([disabled]):hover, .findbar-find-previous:not([disabled]):hover {
+  fill: rgba(80, 150, 220) !important;
+  transition: 0.1s linear !important;
+}
+
+.findbar-find-next:not([disabled]):active, .findbar-find-previous:not([disabled]):active {
+  filter:brightness(75%);
+}
+
+/* -----------------------------11------------------------------------- */
 
 /* 
  * Emulate Opera tab dividers
