@@ -6,7 +6,7 @@
 
 ### notes 
 + Tested with Firefox 66 on Windows 10.
-+ Some custom themes from the store edit this theme's files and some add-ons(at least for the scrollbar) might conflict with it.
++ Some custom themes from the store edit this theme's files and some add-ons might conflict with it.
 + Currently there's an issue where the navbar becomes completely unresponsive to mouse hovers and clicks and you will (usually) need to   restart Firefox to fix it.
 + I have no idea if or how this theme affects power consumption 
 
