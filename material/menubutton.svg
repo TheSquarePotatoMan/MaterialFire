@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" style=""><rect id="backgroundrect" width="100%" height="100%" x="0" y="0" fill="none" stroke="none" style="" class=""/><g class="currentLayer" style=""><title>Layer 1</title><path d="M15.999855041503906,8.001906394958496 c2.2100000381469727,0 4,-1.7899999618530273 4,-4 s-1.7899999618530273,-4 -4,-4 s-4,1.7899999618530273 -4,4 s1.7899999618530273,4 4,4 zm0,4 c-2.2100000381469727,0 -4,1.7899999618530273 -4,4 s1.7899999618530273,4 4,4 s4,-1.7899999618530273 4,-4 s-1.7899999618530273,-4 -4,-4 zm0,12 c-2.2100000381469727,0 -4,1.7899999618530273 -4,4 s1.7899999618530273,4 4,4 s4,-1.7899999618530273 4,-4 s-1.7899999618530273,-4 -4,-4 z" id="svg_1" class="" fill-opacity="1" fill="#5096dc" filter="" opacity="1"/><image style="color: rgb(80, 150, 220);" id="svg_3" x="17" y="17" width="0" height="0" xlink:href="logo/vector_paint_icon256.png" xmlns:xlink="http://www.w3.org/1999/xlink"/></g><defs><filter id="f001" inkscape:label="Matte jelly" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" x="0" y="0" width="1" height="1" inkscape:menu="ABCs" inkscape:menu-tooltip="Bulging, matte jelly covering" color-interpolation-filters="sRGB">
+            <feColorMatrix values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.85 0" result="result0" in="SourceGraphic"/>
+            <feGaussianBlur in="SourceAlpha" stdDeviation="7"/>
+            <feSpecularLighting surfaceScale="5" specularConstant=".9" specularExponent="25">
+                <feDistantLight elevation="60" azimuth="225"/>
+            </feSpecularLighting>
+            <feComposite operator="atop" in2="result0"/>
+        </filter></defs></svg>
