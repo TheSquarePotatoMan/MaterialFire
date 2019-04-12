@@ -1,10 +1,8 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-/* ------------------------------1------------------------------------ */
+/* ------------------------------1---------------------------------------------------------------------- */
 
-/*
- * Tab animations
- */ 
+/* ---------------------------Tab animations                                                          */ 
 
 
 #TabsToolbar .tabbrowser-tab:not([pinned]):not(:hover) {
@@ -62,12 +60,25 @@
 }
 
 
-/* -------------------------------2----------------------------------- */ 
+/* -------------------------------2----------------------------------------------------------------------- */ 
 
 
 /* 
- * overflow icon replacement
+ * O V E R F L O W   R E P L A C E M E N T   F O R   M E N U  B U T T O N
+ *  (delete this and add next section to retain the regular menu button)
  */
+
+
+/*
+ * removes hamburger menu
+ */
+
+#PanelUI-button {
+  display: none !important;
+}
+
+
+/* ------------------------ overflow button styling                                                    */
 
 #nav-bar-overflow-button > .toolbarbutton-icon { 
   background: none !important;
@@ -92,80 +103,74 @@
   filter: brightness(75%);
 }
 
-/* -----------------------------3------------------------------------- */
 
-
-/*
- * nav buttons animation
+/* OPTIONAL: DELETE ABOVE(up until the '2' page divider) 
+ * AND ADD THE CODE BELOW(instructions added) TO RETAIN NORMAL MENU BUTTON---------------------------------------------------------- 
  */
 
-/* BACK BUTTON ANIMATION */
-/* disables default hover */
 
-#back-button > .toolbarbutton-icon {
-    background: unset !important;
-    border-radius: 100% !important;
-    box-shadow: unset !important;
-    border: 0 !important;
+/* ------------------------ menu button styling                                                    */
+
+/* < ----- remove this and the bottom one for activation 
+
+#PanelUI-menu-button .toolbarbutton-icon { 
+background: none !important;
+list-style-image: url("material/menubutton.svg") !important;
+  transform: scale(0.85);
+  
 }
 
-/*adds disabled state */
+#PanelUI-menu-button:not(:hover) .toolbarbutton-icon { 
+  filter: grayscale(100%);
+  opacity: 0.8;
+  transition: 0.2s linear !important;
+}
 
-#back-button[disabled] > .toolbarbutton-icon {
+#PanelUI-menu-button:hover .toolbarbutton-icon { 
+  filter: grayscale(0%);
+  opacity: 1.0;
+  transition: 0.1s ease-in !important;
+}
+
+#PanelUI-menu-button:active .toolbarbutton-icon { 
+  filter: brightness(75%);
+}
+
+
+remove this and the top one for activation ---- > */ 
+
+
+
+/* -------------------------------3---------------------------------------------------------- */
+
+
+
+/* 
+ * T O O L B A R - B U T T O N     S T Y L I N G 
+ */
+
+
+/* -----------------------icon default state */
+
+.toolbarbutton-icon {
+  background: unset !important;
+  box-shadow: unset !important;
+  border: 0 !important;
+  fill: rgba(130, 130, 130, 1.0) !important;
+}
+
+                     
+/* ----------------------icon disabled state */
+
+.toolbarbutton-1[disabled]:not(#stop-button):not(#reload-button) > .toolbarbutton-icon {
     opacity: 0.5 !important;
 }
+              
 
 #back-button[disabled]:active > .toolbarbutton-icon {
     opacity: 1.0 !important;
     fill: rgba(229, 76, 45, 1.0) !important;
     transition: none !important;
-}
- 
-/*adds enabled state*/
-
-#back-button[enabled] > .toolbarbutton-icon {
-    opacity: 1.0 !important;
-}
-
-/* adds hover state */
-
-#back-button:hover:not([disabled]) > .toolbarbutton-icon {
-    fill: rgba(80, 150, 220, 1) !important;
-    transition: 0.1s ease-in; 
-}
-
-/* adds unhover state */
-
-#back-button > .toolbarbutton-icon:not(:hover) {
-    background-color: transparent;
-    transition: 0.2s ease-in !important; 
-}
-
-/* adds click state */
-
-#back-button:active:not([disabled]) > .toolbarbutton-icon {
-    filter: brightness(75%);
-    transition: none !important;
-}
-
-/* code to make back button same size as forward button in all modes? */
-
-#back-button > .toolbarbutton-icon {
-}
-
-/* forward button */
-
-/* disables default behavior */
-
-#forward-button > .toolbarbutton-icon {
-    background: unset !important;
-}
-
-/*adds disabled state */
-
-#forward-button[disabled] > .toolbarbutton-icon {
-    opacity: 0.5 !important;
-    transition: linear 0.2s;
 }
 
 #forward-button[disabled]:active > .toolbarbutton-icon {
@@ -173,89 +178,62 @@
     fill: rgba(229, 76, 45, 1.0) !important;
     transition: none !important;
 }
- 
-/*adds enabled state*/
 
-#forward-button[enabled] > .toolbarbutton-icon {
-    opacity: 1.0 !important;
-    transition: linear 0.05s;
-}
+/* ----------------------icon enabled state */
 
-/* adds hover state */
-
-#forward-button:hover:not([disabled]) > .toolbarbutton-icon {
+.toolbarbutton-1:not(#stop-button):hover:not([disabled]) > .toolbarbutton-icon {
     fill: rgba(80, 150, 220, 1) !important;
     transition: 0.1s ease-in; 
 }
 
-/* adds unhover state */
-
-#forward-button > .toolbarbutton-icon:not(:hover) {
+.toolbarbutton-1 > .toolbarbutton-icon:not(:hover) {
     background-color: transparent;
     transition: 0.2s ease-in !important; 
 }
 
-/* adds click state */
-
-#forward-button:active:not([disabled]) > .toolbarbutton-icon {
+.toolbarbutton-1:active:not([disabled]) > .toolbarbutton-icon {
     filter: brightness(75%);
     transition: none !important;
 }
 
-/*
- * reload/stop button animation 
- */ 
+/* code to make back button same size as forward button in all modes anyone? */
 
-#reload-button > .toolbarbutton-icon {
-   background: unset !important;
-}
+/* ---------------------stopbutton styling(has unique color scheme) */
 
-#stop-button > .toolbarbutton-icon {
-   background: none !important;
-}
-
-
-#reload-button:hover:not([disabled]) > .toolbarbutton-icon {
-   fill: rgba(80, 150, 220, 1);
-   transition: linear 0.1s;
-}
 
 #stop-button:hover:not([disabled]) > .toolbarbutton-icon {
-    fill: rgba(229, 76, 45, 1);
+    fill: rgba(229, 76, 45, 1) !important;
     transition: linear 0.1s;
 }
 
-#reload-button:not(:hover):not([disabled]) > .toolbarbutton-icon {
-   transition: linear 0.2s;
+
+/* ----------------------new tab button styling (has new icon)  */
+
+
+.tabs-newtab-button > .toolbarbutton-icon { 
+  background: none !important;
+  list-style-image: url("material/add.svg") !important;
+  transform: scale(0.8);
 }
 
-#stop-button:not(:hover):not([disabled]) > .toolbarbutton-icon {
-    transition: linear 0.2s; 
+.tabs-newtab-button:not(:hover) {
+  filter: opacity(60%) grayscale(100%);
+  transition: 0.2s ease-in; 
 }
 
-#reload-button:active:not([disabled]) > .toolbarbutton-icon {
-    filter: brightness(75%);
-    transition: none !important;
+.tabs-newtab-button:hover {
+  transition: linear 0.1s !important; 
 }
 
-#stop-button:active:not([disabled]) > .toolbarbutton-icon {
-    filter: brightness(75%);
-    transition: none !important;
+.tabs-newtab-button:active {
+  filter: brightness(75%);
+  transition: none !important;
 }
 
 
-/* ------------------------------4------------------------------------ */
 
 
-/*
- * removes hamburger menu
- */
-
-#PanelUI-button {
-  display: none !important;
-}
-
-/* -------------------------------5----------------------------------- */
+/* -------------------------------4----------------------------------- */
 
 
 /*
@@ -267,7 +245,7 @@
 }
 
 
-/* -------------------------------6----------------------------------- */
+/* -------------------------------5------------------------------------ */
 
 
 
@@ -306,39 +284,11 @@
     transition: 0.1s linear;
 }
 
-/* -----------------------------7------------------------------------- */
+/* -----------------------------6------------------------------------- */
     
 
 /*
- * new tab button animation
- */
-
-.tabs-newtab-button > .toolbarbutton-icon { 
-  background: none !important;
-  list-style-image: url("material/add.svg") !important;
-  transform: scale(0.8);
-}
-
-.tabs-newtab-button:not(:hover) {
-  filter: opacity(60%) grayscale(100%);
-  transition: 0.2s ease-in; 
-}
-
-.tabs-newtab-button:hover {
-  transition: linear 0.1s !important; 
-}
-
-.tabs-newtab-button:active {
-  filter: brightness(75%);
-  transition: none !important;
-}
-
-
-
-/* -------------------------------8----------------------------------- */
-
-/*
- * Hide HTTPS certificate label
+ * H T T P S  C E R T I F I C A T E    L A B E L   A U T O    H I D E 
  */
 
 
@@ -354,11 +304,11 @@
 }
 
 
-/* ------------------------------9------------------------------------ */
+/* ------------------------------7------------------------------------ */
 
 
 /* 
- * Removes borders
+ *  B O R D E R ( L E S S )   S T Y L I N G
  */
 
 
@@ -409,10 +359,10 @@
   box-shadow: 0px -2px 3px rgba(0, 0, 0, 0.1) !important;
 }
 
-/* ------------------------------10------------------------------------ */
+/* -------------------------------8----------------------------------- */
 
 /*
- * findbar styling
+ * F I N D B A R   S T Y L I N G
  */
 
 .findbar-closebutton > .toolbarbutton-icon {
@@ -497,7 +447,7 @@
   filter:brightness(75%);
 }
 
-/* -----------------------------11------------------------------------- */
+/* -----------------------------9------------------------------------- */
 
 /* 
  * Emulate Opera tab dividers
