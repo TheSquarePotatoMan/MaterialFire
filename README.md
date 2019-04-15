@@ -1,14 +1,11 @@
 # MaterialFire
-+ Removes menu button and page action button for a cleaner look, the overflow button is used as a replacement for the menu button
-+ Removes back button background in normal and touch mode
-+ Edits and adds animations to the tabs, urlbar and the buttons *visible in the screenshots*
-+ Adds some stylistic changes
++ Menu button now available but still replacable with overflow button
++ As clean and fluid a material UI as I could make it (still working on more improvements though!)
++ Edits and adds animations to all tabs, searchbars and buttons(though some currently still have their original background)
 
 ### notes 
 + Tested with Firefox 66 on Windows 10.
 + Some custom themes from the store edit this theme's files and some add-ons might conflict with it.
-+ Currently there's an issue where the navbar becomes completely unresponsive to mouse hovers and clicks and you will (usually) need to   restart Firefox to fix it.
-+ I have no idea if or how this theme affects power consumption 
 
 ### screenshots
 
@@ -23,5 +20,12 @@ Light mode
 + Type 'about:profiles' in the Firefox urlbar and hit enter
 + Open the root directory folder of your profile
 + Open the 'chrome' folder, or create it if it doesn't exist
-+ Copy the file 'chrome.css'(or its contents if you already have a chrome.css file) and the folder 'material' into the chrome folder
++ Copy the file 'chrome.css'(or its contents if you already have a chrome.css file), the 'movablemenubutton.uc.jc' and the folder 'material' into the chrome folder
 + Restart Firefox
+
+### What I'm hoping to add in the future
++ removing background or replacing buttons 
++ expandable/scrollable bookmarkbar(I'm a complete coding noob though, so this might take a while)
++ Some button replacements
+
+
