@@ -29,4 +29,6 @@ Light mode
 + expandable/scrollable bookmarkbar(I'm a complete coding noob though, so this might take a while)
 + Some button replacements
 
+ps contributions are very much appreciated! :)
+
 
