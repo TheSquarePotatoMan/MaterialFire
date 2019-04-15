@@ -1,31 +1,62 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-/* ------------------------------1---------------------------------------------------------------------- */
-
-/* ---------------------------Tab animations                                                          */ 
-
-
-#TabsToolbar .tabbrowser-tab:not([pinned]):not(:hover) {
-  opacity: 0.6;
-  transition: 0.2s ease-in !important; 
+#PanelUI-menu-button {
+    -moz-binding: url(data:text/xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+CjwhLS0gQ29weXJpZ2h0IChjKSAyMDE3IEhhZ2dhaSBOdWNoaQpBdmFpbGFibGUgZm9yIHVzZSB1bmRlciB0aGUgTUlUIExpY2Vuc2U6Cmh0dHBzOi8vb3BlbnNvdXJjZS5vcmcvbGljZW5zZXMvTUlUCiAtLT4KCjwhLS0gUnVuIHVzZXJDaHJvbWUuanMvdXNlckNocm9tZS54dWwgYW5kIC51Yy5qcy8udWMueHVsLy5jc3MgZmlsZXMgIC0tPgo8YmluZGluZ3MgeG1sbnM9Imh0dHA6Ly93d3cubW96aWxsYS5vcmcveGJsIj4KICAgIDxiaW5kaW5nIGlkPSJqcyIgZXh0ZW5kcz0iY2hyb21lOi8vZ2xvYmFsL2NvbnRlbnQvYmluZGluZ3MvdG9vbGJhcmJ1dHRvbi54bWwjbWVudSI+CiAgICAgICAgPGltcGxlbWVudGF0aW9uPgogICAgICAgICAgICA8Y29uc3RydWN0b3I+PCFbQ0RBVEFbCiAgICAgICAgICAgICAgICBpZih3aW5kb3cudXNlckNocm9tZUpzTW9kKSByZXR1cm47CiAgICAgICAgICAgICAgICB3aW5kb3cudXNlckNocm9tZUpzTW9kID0gdHJ1ZTsKICAgICAgICAgICAgICAgIHZhciBjaHJvbWVGaWxlcyA9IEZpbGVVdGlscy5nZXREaXIoIlVDaHJtIiwgW10pLmRpcmVjdG9yeUVudHJpZXM7CiAgICAgICAgICAgICAgICB2YXIgeHVsRmlsZXMgPSBbXTsKICAgICAgICAgICAgICAgIHZhciBzc3MgPSBDY1snQG1vemlsbGEub3JnL2NvbnRlbnQvc3R5bGUtc2hlZXQtc2VydmljZTsxJ10uZ2V0U2VydmljZShDaS5uc0lTdHlsZVNoZWV0U2VydmljZSk7CiAgICAgICAgICAgICAgICB3aGlsZShjaHJvbWVGaWxlcy5oYXNNb3JlRWxlbWVudHMoKSkgewogICAgICAgICAgICAgICAgICAgIHZhciBmaWxlID0gY2hyb21lRmlsZXMuZ2V0TmV4dCgpLlF1ZXJ5SW50ZXJmYWNlKENpLm5zSUZpbGUpOwogICAgICAgICAgICAgICAgICAgIHZhciBmaWxlVVJJID0gU2VydmljZXMuaW8ubmV3RmlsZVVSSShmaWxlKTsKICAgICAgICAgICAgICAgICAgICBpZihmaWxlLmlzRmlsZSgpKSB7CiAgICAgICAgICAgICAgICAgICAgICAgIHR5cGUgPSAibm9uZSI7CiAgICAgICAgICAgICAgICAgICAgICAgIGlmKC8oXnVzZXJDaHJvbWV8XC51YylcLmpzJC9pLnRlc3QoZmlsZS5sZWFmTmFtZSkpIHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHR5cGUgPSAidXNlcmNocm9tZS9qcyI7CiAgICAgICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgICAgICAgICAgZWxzZSBpZigvKF51c2VyQ2hyb21lfFwudWMpXC54dWwkL2kudGVzdChmaWxlLmxlYWZOYW1lKSkgewogICAgICAgICAgICAgICAgICAgICAgICAgICAgdHlwZSA9ICJ1c2VyY2hyb21lL3h1bCI7CiAgICAgICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgICAgICAgICAgZWxzZSBpZigvXC5hc1wuY3NzJC9pLnRlc3QoZmlsZS5sZWFmTmFtZSkpIHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHR5cGUgPSAiYWdlbnRzaGVldCI7CiAgICAgICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgICAgICAgICAgZWxzZSBpZigvXig/ISh1c2VyQ2hyb21lfHVzZXJDb250ZW50KVwuY3NzJCkuK1wuY3NzJC9pLnRlc3QoZmlsZS5sZWFmTmFtZSkpIHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHR5cGUgPSAidXNlcnNoZWV0IjsKICAgICAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgICAgICBpZih0eXBlICE9ICJub25lIikgewogICAgICAgICAgICAgICAgICAgICAgICAgICAgY29uc29sZS5sb2coIi0tLS0tLS0tLS1cXCAiICsgZmlsZS5sZWFmTmFtZSArICIgKCIgKyB0eXBlICsgIikiKTsKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHRyeSB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgaWYodHlwZSA9PSAidXNlcmNocm9tZS9qcyIpIHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgU2VydmljZXMuc2NyaXB0bG9hZGVyLmxvYWRTdWJTY3JpcHRXaXRoT3B0aW9ucyhmaWxlVVJJLnNwZWMsIHt0YXJnZXQ6IHdpbmRvdywgaWdub3JlQ2FjaGU6IHRydWV9KTsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgZWxzZSBpZih0eXBlID09ICJ1c2VyY2hyb21lL3h1bCIpIHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgeHVsRmlsZXMucHVzaChmaWxlVVJJLnNwZWMpOwogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBlbHNlIGlmKHR5cGUgPT0gImFnZW50c2hlZXQiKSB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGlmKCFzc3Muc2hlZXRSZWdpc3RlcmVkKGZpbGVVUkksIHNzcy5BR0VOVF9TSEVFVCkpCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBzc3MubG9hZEFuZFJlZ2lzdGVyU2hlZXQoZmlsZVVSSSwgc3NzLkFHRU5UX1NIRUVUKTsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgZWxzZSBpZih0eXBlID09ICJ1c2Vyc2hlZXQiKSB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGlmKCFzc3Muc2hlZXRSZWdpc3RlcmVkKGZpbGVVUkksIHNzcy5VU0VSX1NIRUVUKSkKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHNzcy5sb2FkQW5kUmVnaXN0ZXJTaGVldChmaWxlVVJJLCBzc3MuVVNFUl9TSEVFVCk7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgICAgICAgICAgfSBjYXRjaChlKSB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY29uc29sZS5sb2coIiMjIyMjIyMjIyMgRVJST1I6ICIgKyBlICsgIiBhdCAiICsgZS5saW5lTnVtYmVyICsgIjoiICsgZS5jb2x1bW5OdW1iZXIpOwogICAgICAgICAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgICAgICAgICAgY29uc29sZS5sb2coIi0tLS0tLS0tLS0vICIgKyBmaWxlLmxlYWZOYW1lKTsKICAgICAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gbG9hZFhVTCgpIHsKICAgICAgICAgICAgICAgICAgICBpZih4dWxGaWxlcy5sZW5ndGggPiAwKSB7CiAgICAgICAgICAgICAgICAgICAgICAgIGRvY3VtZW50LmxvYWRPdmVybGF5KHh1bEZpbGVzLnNoaWZ0KCksIG51bGwpOwogICAgICAgICAgICAgICAgICAgICAgICBzZXRUaW1lb3V0KGxvYWRYVUwsIDUpOwogICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIH0sIDApOwogICAgICAgICAgICBdXT48L2NvbnN0cnVjdG9yPgogICAgICAgIDwvaW1wbGVtZW50YXRpb24+CiAgICA8L2JpbmRpbmc+CjwvYmluZGluZ3M+Cg==);
 }
 
-:root #tabbrowser-tabs:active .tabbrowser-tab[visuallyselected] {
-  opacity: 1.0;
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.15) !important;
-  transition: 0.1s linear !important; 
+/* ------------------------------1--V A R I A B L E S---------------------------------------------------------- */
+
+:root {
+	--default-color: rgba(130, 130, 130, 1.0);
+	--blue-color: rgba(80, 150, 220, 1); 
+	--red-color: rgba(229, 76, 45, 1);
+	--disabled-active-color: rgba(229, 76, 45, 1.0);
+	--active-filter: brightness(75%);
+	--unhover-opacity: 0.6;
+	--disabled-opacity: 0.5;
+    --shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
+	--bottom-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+	--top-shadow: 0px -2px 2px rgba(0, 0, 0, 0.1);
+	--hover-animation: 0.1s linear;
+	--unhover-animation: 0.1s linear;
 }
 
-#TabsToolbar .tabbrowser-tab:not([pinned]):not(:active) {
-  transition: 0.2s ease-in !important; 
+/* ---------------------------Tab styling   
+                                                       */ 
+.tabbrowser-tab::after,
+.tabbrowser-tab::before {
+  margin-top: 9px !important;
+  margin-bottom: 9px !important;
 }
 
-#TabsToolbar .tabbrowser-tab[visuallyselected] {
-  opacity: 1.0 !important;
-  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2) !important;
+.tabbrowser-tab:hover::after,
+#tabbrowser-tabs:not([movingtab]) > .tabbrowser-tab[beforehovered]::after,
+.tabbrowser-tab[multiselected]::after,
+#tabbrowser-tabs:not([movingtab]) > .tabbrowser-tab[before-multiselected]::after { 
+  visibility: hidden !important;
 }
 
-#TabsToolbar .tab-close-button {
+#tabbrowser-tabs:not([movingtab]) > .tabbrowser-tab[beforeselected-visible]::after,
+#tabbrowser-tabs[movingtab] > .tabbrowser-tab[visuallyselected]::before,
+.tabbrowser-tab[visuallyselected]::after {
+ visibility: hidden !important;
+}
+
+.tabbrowser-tab:not([pinned]):not([visuallyselected]):not(:hover) {
+  opacity: var(--unhover-opacity);
+  transition: opacity var(--unhover-animation) !important; 
+}
+
+.tabbrowser-tab[visuallyselected]:not(:active) {
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+}
+
+.tabbrowser-tab[visuallyselected]:active {
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.15);
+  transition: box-shadow var(--hover-animation) !important; 
+}
+
+.tab-close-button {
    background: none !important;
    list-style-image: url("material/close.svg") !important;
    width: 22px !important;
@@ -37,75 +68,58 @@
 
 .tabbrowser-tab:not(:hover) .tab-close-button { 
    opacity: 0 !important;
-   transition: 0.2s ease-in !important; 
+   transition: opacity var(--unhover-animation) !important; 
 }
-
+	
 .tabbrowser-tab:not([pinned]):hover .tab-close-button {
   display: block !important;
-  transition: 0.1s linear !important; 
+  transition: var(--hover-animation) !important; 
 }
 
-.tabbrowser-tab .tab-close-button:not(hover) {
-  filter: opacity(60%) grayscale(100%) !important;
-  transition: 0.2s linear !important; 
+.tab-close-button:not(:hover) {
+  filter: opacity(var(--unhover-opacity)) grayscale(100%) !important;
+  transition: filter var(--unhover-animation) !important; 
 }
 
-.tabbrowser-tab .tab-close-button:hover {
+.tab-close-button:hover {
   filter: opacity(100%) grayscale(0%) !important;
-  transition: 0.1s linear !important; 
+  transition: filter var(--hover-animation) !important; 
 }
 
-.tabbrowser-tab .tab-close-button:active {
-  filter: brightness(75%) !important;
+.tab-close-button:active {
+  filter: var(--active-filter) !important;
 }
-
 
 /* -------------------------------2----------------------------------------------------------------------- */ 
 
 
-/* 
- * O V E R F L O W   R E P L A C E M E N T   F O R   M E N U  B U T T O N
- *  (delete this and add next section to retain the regular menu button)
- */
-
-
-/*
- * removes hamburger menu
- */
-
-#PanelUI-button {
-  display: none !important;
-}
-
-
-/* ------------------------ overflow button styling                                                    */
+ /* ------------------------ overflow button styling                                                    */
 
 #nav-bar-overflow-button > .toolbarbutton-icon { 
-  background: none !important;
-  list-style-image: url("material/menubutton.svg") !important;
+  background: none;
+  list-style-image: url("material/menubutton.svg");
   transform: scale(0.85);
-  
 }
 
 #nav-bar-overflow-button:not(:hover) > .toolbarbutton-icon { 
   filter: grayscale(100%);
-  opacity: 0.8;
-  transition: 0.2s linear !important;
+  opacity: calc(var(--unhover-opacity) * 133%);
+  transition: var(--unhover-animation);
 }
 
 #nav-bar-overflow-button:hover > .toolbarbutton-icon { 
   filter: grayscale(0%);
   opacity: 1.0;
-  transition: 0.1s ease-in !important;
+  transition: var(--hover-animation);
 }
 
 #nav-bar-overflow-button:active > .toolbarbutton-icon { 
-  filter: brightness(75%);
+  filter: var(--active-filter);
 }
 
 
-/* OPTIONAL: DELETE ABOVE(up until the '2' page divider) 
- * AND ADD THE CODE BELOW(instructions added) TO RETAIN NORMAL MENU BUTTON---------------------------------------------------------- 
+/* OPTIONAL: delete above(up until the '2' page divider) 
+ * and add code below to style the menu button instead---------------------------------------------------------- 
  */
 
 
@@ -146,64 +160,79 @@ remove this and the top one for activation ---- > */
 
 
 /* 
- * T O O L B A R - B U T T O N     S T Y L I N G 
+    B U T T O N     S T Y L I N G 
  */
-
-
+ 
 /* -----------------------icon default state */
 
-.toolbarbutton-icon {
+
+toolbarbutton:not(.widget-overflow-list.toolbarbutton-icon):not(.titlebar-button):not(.bookmark-item) {
   background: unset !important;
   box-shadow: unset !important;
-  border: 0 !important;
-  fill: rgba(130, 130, 130, 1.0) !important;
+  border: unset !important;
+  fill: var(--default-color) !important;
 }
 
-                     
+.findbar-find-next, .findbar-find-previous {
+	 background: unset !important;
+  box-shadow: unset !important;
+  border: unset !important;
+  fill: var(--default-color) !important;
+}
+             
 /* ----------------------icon disabled state */
 
-.toolbarbutton-1[disabled]:not(#stop-button):not(#reload-button) > .toolbarbutton-icon {
-    opacity: 0.5 !important;
+toolbarbutton[disabled]:not(#stop-button):not(#reload-button) {
+    opacity: var(--disabled-opacity) !important;
 }
               
 
-#back-button[disabled]:active > .toolbarbutton-icon {
+toolbarbutton[disabled]:active > .toolbarbutton-icon {
     opacity: 1.0 !important;
-    fill: rgba(229, 76, 45, 1.0) !important;
+    fill: var(--disabled-active-color) !important;
     transition: none !important;
 }
 
-#forward-button[disabled]:active > .toolbarbutton-icon {
-    opacity: 1.0 !important;
-    fill: rgba(229, 76, 45, 1.0) !important;
-    transition: none !important;
+toolbarbutton[disabled]:hover:not(:active) > .toolbarbutton-icon {
+    fill: var(--disabled) !important;
+    transition: fill var(--unhover-animation) !important;
 }
 
 /* ----------------------icon enabled state */
 
-.toolbarbutton-1:not(#stop-button):hover:not([disabled]) > .toolbarbutton-icon {
-    fill: rgba(80, 150, 220, 1) !important;
-    transition: 0.1s ease-in; 
+toolbarbutton:not(#stop-button):hover:not([disabled]), toolbarbutton:not(#stop-button):hover:not([disabled]) .toolbarbutton-icon {
+    fill: var(--blue-color) !important;
+    transition: fill var(--hover-animation); 
 }
 
-.toolbarbutton-1 > .toolbarbutton-icon:not(:hover) {
-    background-color: transparent;
-    transition: 0.2s ease-in !important; 
-}
-
-.toolbarbutton-1:active:not([disabled]) > .toolbarbutton-icon {
-    filter: brightness(75%);
+toolbarbutton:active:not([disabled]), toolbarbutton:active:not([disabled]) > .toolbarbutton-icon {
+    filter: var(--active-filter);
     transition: none !important;
 }
 
 /* code to make back button same size as forward button in all modes anyone? */
 
+.bookmark-item:not(.subviewbutton) {
+	padding: 4px !important;
+	border-radius: 2em !important;
+}
+	
+.bookmark-item:not(:hover) > .toolbarbutton-icon {
+	opacity: var(--unhover-opacity);
+	filter: grayscale(30%);
+	transition: var(--unhover-animation) !important;
+}
+
+.bookmark-item:not(.subviewbutton):hover {
+	transition: var(--hover-animation) !important;
+}
+
 /* ---------------------stopbutton styling(has unique color scheme) */
 
 
 #stop-button:hover:not([disabled]) > .toolbarbutton-icon {
-    fill: rgba(229, 76, 45, 1) !important;
-    transition: linear 0.1s;
+    fill: var(--red-color) !important;
+    transition: fill var(--hover-animation);
 }
 
 
@@ -217,16 +246,16 @@ remove this and the top one for activation ---- > */
 }
 
 .tabs-newtab-button:not(:hover) {
-  filter: opacity(60%) grayscale(100%);
-  transition: 0.2s ease-in; 
+  filter: opacity(var(--unhover-opacity)) grayscale(100%);
+  transition: filter var(--unhover-animation); 
 }
 
 .tabs-newtab-button:hover {
-  transition: linear 0.1s !important; 
+  transition: filter var(--hover-animation) !important; 
 }
 
 .tabs-newtab-button:active {
-  filter: brightness(75%);
+  filter: var(--active-filter);
   transition: none !important;
 }
 
@@ -250,39 +279,60 @@ remove this and the top one for activation ---- > */
 
 
 /* 
- * Urlbar styling 
+ * textbox styling 
  */
 
-
-#main-window:not([customizing]) .tab-line {
-  display: none !important;
-}
-
-#urlbar, .searchbar-textbox {
+textbox:not(.searchbar-textbox), #urlbar {
     border: 0 !important;
     border-radius: 2em !important;
-    box-shadow: 0 0 0 0px rgba(0, 0, 0, 0) !important;
+    box-shadow: none !important;
     background-color: unset;
 }
 
-#urlbar:hover {
+.searchbar-textbox {
     background-color: rgba(130, 130, 130, 0.12) !important;
-    opacity: 0.7;
-    transition: 0.1s linear;
+    opacity: calc(var(--unhover-opacity)*1.1667);
+	border: 0 !important;
+    border-radius: 2em !important;
+    box-shadow: none !important;
 }
 
-#urlbar:not(:hover) {
+textbox:hover:not(.searchbar-textbox) {
+    background-color: rgba(130, 130, 130, 0.12) !important;
+    opacity: calc(var(--unhover-opacity)*1.1667);
+    transition: var(--hover-animation);
+}
+
+.searchbar-search-button {
+    opacity:0;
+    transition: opacity var(--unhover-animation);
+} 
+
+.searchbar-textbox:hover .searchbar-search-button, .searchbar-textbox[focused=true] .searchbar-search-button {
+    opacity: 1;
+    transition: opacity var(--hover-animation);
+}
+
+textbox:not(:hover):not(.searchbar-textbox) {
     background-color: transparent !important;
-    opacity: 0.7;
-    transition: 0.2s ease-in;
+    opacity: calc(var(--unhover-opacity)*1.1667);
+    transition: var(--unhover-animation);
 }
 
 #urlbar[focused=true] {
     background-color: rgba(255, 255, 255, 0.1) !important;
-    opacity: 0.7 !important;
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3) !important;
-    transition: 0.1s linear;
+    opacity: calc(var(--unhover-opacity)*1.1667) !important;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2) !important;
+    transition: var(--hover-animation);
 }
+
+textbox[focused=true]:not(#urlbar) {
+    background-color: rgba(130, 130, 130, 0.24) !important;
+    opacity: calc(var(--unhover-opacity)*1.1667) !important;
+	transition: var(--hover-animation);
+}
+
+
 
 /* -----------------------------6------------------------------------- */
     
@@ -291,14 +341,20 @@ remove this and the top one for activation ---- > */
  * H T T P S  C E R T I F I C A T E    L A B E L   A U T O    H I D E 
  */
 
+#identity-box {
+	transition: 0.2s ease-out;
+}
 
 #identity-box:not(:hover) {
   padding-inline-end: 0px !important;
   margin-right: 8px !important;
+  transition: 0.2s ease-out;
 }
+
 #identity-box:not(:hover) #identity-icon-labels {
   width: 0px;
 } 
+
 #identity-box:not(:hover) #identity-icon-labels #identity-icon-country-label {
   display: none;
 }
@@ -310,53 +366,51 @@ remove this and the top one for activation ---- > */
 /* 
  *  B O R D E R ( L E S S )   S T Y L I N G
  */
+ 
+ #main-window:not([customizing]) .tab-line {
+  display: none !important;
+}
 
+box {
+	border: none !important;
+}
 
+.customizationmode-button {
+	border-radius: 2em !important;
+	border: none !important;
+	box-shadow: var(--bottom-shadow);
+	transition: var(--hover-animation);
+}
+
+.panel-arrow {
+  padding-bottom: 1px;
+} 
+
+#customization-footer {
+	border: none !important;
+}
+	
 #navigator-toolbox {
-  border: none !important;
-  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1) !important;
-  /*margin-top: -1px !important;  / bugs when a tab is dragged */
-  margin-bottom: -1px !important;
+  box-shadow: var(--bottom-shadow) !important;
 }   
 
 
 #nav-bar {
   /*margin-top: -1px !important;  / bugs when a tab is dragged */
   margin-bottom: -1px !important;
-}   
-
-/* removes border under tabs */
-
-#TabsToolbar, #nav-bar {
   border: none !important;
   box-shadow: 0 -1px 0 rgba(0, 0, 0, 0) !important;
-}
+}   
 
 #PersonalToolbar {
+  margin-top: 2.32499991px !important;
   transform: scaleY(1.07) !important;
 }
 
-
-.bookmark-item {
-   transform: scaleY(0.934579) !important;
-   padding: 5px !important;
-   border-radius: 2em !important;
-   transition: 0.2s ease-in !important;
-}
-
-.bookmark-item:hover {
-    background-color: rgba(130, 130, 130, 0.12) !important;
-    transition: 0.1s linear !important;
-}
-
-.bookmark-item:active {
-    background-color: rgba(130, 130, 130, 0.2) !important;
-}
-
-.browserContainer > findbar {
+findbar {
   opacity: 0.99999 !important;
   border: none !important;
-  box-shadow: 0px -2px 3px rgba(0, 0, 0, 0.1) !important;
+  box-shadow: var(--top-shadow) !important;
 }
 
 /* -------------------------------8----------------------------------- */
@@ -368,28 +422,28 @@ remove this and the top one for activation ---- > */
 .findbar-closebutton > .toolbarbutton-icon {
    background: none !important;
    list-style-image: url("material/close.svg") !important;
-   filter: grayscale(100%) opacity(60%) !important;
+   filter: grayscale(100%) opacity(var(--unhover-opacity)) !important;
    transform: scale(0.5);
-   transition: 0.2s ease-in !important;
+   transition: var(--unhover-animation) !important;
 }
 
 .findbar-closebutton:hover .toolbarbutton-icon {
   filter: grayscale(0%) !important;
-  transition: 0.1s linear !important; 
+  transition: var(--hover-animation) !important; 
 }
 
 .findbar-closebutton:active {
-  filter: brightness(75%) !important;
+  filter: var(--active-filter) !important;
 }
 
 .findbar-button {
    border-radius: 2em !important;
-   transition: 0.2s ease-in !important;
+   transition: var(--unhover-animation) !important;
 }
 
 .findbar-button:hover {
     background-color: rgba(130, 130, 130, 0.12) !important;
-    transition: 0.1s linear !important;
+    transition: var(--hover-animation) !important;
 }
 
 .findbar-button:active {
@@ -406,69 +460,9 @@ remove this and the top one for activation ---- > */
 .findbar-textbox {
    transform: scale(1.2) !important;
    transform-origin: left;
-   border: none !important;
-   border-radius: 2em !important;
-   transition: 0.2s ease-in !important;
-}
-
-.findbar-textbox:not(:hover) {
-    background: transparent !important;
-    transition: 0.1s linear !important;
-}
-
-.findbar-textbox:hover {
-    background-color: rgba(130, 130, 130, 0.12) !important;
-    transition: 0.1s linear !important;
-}
-
-.findbar-textbox[focused=true] {
-    background-color: rgba(255, 255, 255, 0.1) !important;
-    opacity: 0.7 !important;
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3) !important;
-    transition: 0.1s linear;
 }
 
 .findbar-find-previous {
-  padding-left: 40px !important;
+  margin-left: 40px !important;
 }
 
-.findbar-find-next, .findbar-find-previous {
-  border: none !important;
-  background: none !important;
-  box-shadow: none !important;
-}
-
-.findbar-find-next:not([disabled]):hover, .findbar-find-previous:not([disabled]):hover {
-  fill: rgba(80, 150, 220) !important;
-  transition: 0.1s linear !important;
-}
-
-.findbar-find-next:not([disabled]):active, .findbar-find-previous:not([disabled]):active {
-  filter:brightness(75%);
-}
-
-/* -----------------------------9------------------------------------- */
-
-/* 
- * Emulate Opera tab dividers
- */
-
-
-.tabbrowser-tab::after,
-.tabbrowser-tab::before {
-  margin-top: 9px !important;
-  margin-bottom: 9px !important;
-}
-
-.tabbrowser-tab:hover::after,
-#tabbrowser-tabs:not([movingtab]) > .tabbrowser-tab[beforehovered]::after,
-.tabbrowser-tab[multiselected]::after,
-#tabbrowser-tabs:not([movingtab]) > .tabbrowser-tab[before-multiselected]::after { 
-  visibility: hidden !important;
-}
-
-#tabbrowser-tabs:not([movingtab]) > .tabbrowser-tab[beforeselected-visible]::after,
-#tabbrowser-tabs[movingtab] > .tabbrowser-tab[visuallyselected]::before,
-.tabbrowser-tab[visuallyselected]::after {
- visibility: hidden !important;
-}
