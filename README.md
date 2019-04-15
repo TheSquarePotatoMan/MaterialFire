@@ -24,6 +24,7 @@ Light mode
 + Restart Firefox
 
 ### What I'm hoping to add in the future
++ resizing back button to be the same size as the forward button in all modes
 + removing background or replacing buttons 
 + expandable/scrollable bookmarkbar(I'm a complete coding noob though, so this might take a while)
 + Some button replacements
