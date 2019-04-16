@@ -18,31 +18,41 @@
 	--bottom-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
 	--top-shadow: 0px -2px 2px rgba(0, 0, 0, 0.1);
 	--hover-animation: 0.1s linear;
-	--unhover-animation: 0.2s linear;
+	--unhover-animation: 0.1s linear;
 }
 
-/* ---------------------------Tab styling   
-                                                       */ 
-.tabbrowser-tab::after,
-.tabbrowser-tab::before {
-  margin-top: 9px !important;
-  margin-bottom: 9px !important;
+toolbarbutton:hover, toolbarbutton:hover .toolbarbutton-icon {
+	transition: var(--hover-animation);
 }
 
-.tabbrowser-tab:hover::after,
-#tabbrowser-tabs:not([movingtab]) > .tabbrowser-tab[beforehovered]::after,
-.tabbrowser-tab[multiselected]::after,
-#tabbrowser-tabs:not([movingtab]) > .tabbrowser-tab[before-multiselected]::after { 
-  visibility: hidden !important;
+toolbarbutton:not(:hover), toolbarbutton:not(:hover) .toolbarbutton-icon {
+	transition: var(--unhover-animation);
 }
 
-#tabbrowser-tabs:not([movingtab]) > .tabbrowser-tab[beforeselected-visible]::after,
-#tabbrowser-tabs[movingtab] > .tabbrowser-tab[visuallyselected]::before,
-.tabbrowser-tab[visuallyselected]::after {
- visibility: hidden !important;
+/* ---------------------------Tab animations                                                          */ 
+
+
+#TabsToolbar .tabbrowser-tab:not([pinned]):not(:hover) {
+  opacity: var(--unhover-opacity);
+  transition: var(--unhover-animation) !important; 
 }
 
-.tab-close-button {
+:root #tabbrowser-tabs:active .tabbrowser-tab[visuallyselected] {
+  opacity: 1.0;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.15) !important;
+  transition: var(--hover-animation) !important; 
+}
+
+#TabsToolbar .tabbrowser-tab:not([pinned]):not(:active) {
+  transition: var(--unhover-animation) !important; 
+}
+
+#TabsToolbar .tabbrowser-tab[visuallyselected] {
+  opacity: 1.0 !important;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2) !important;
+}
+
+#TabsToolbar .tab-close-button {
    background: none !important;
    list-style-image: url("material/close.svg") !important;
    width: 22px !important;
@@ -50,76 +60,79 @@
    padding: 6px !important;
    position: relative !important;
    margin-right: -7px !important;
-   display: block !important;
-}
-
-.tabbrowser-tab:not([pinned]):not([visuallyselected]):not(:hover) {
-  opacity: var(--unhover-opacity);
-  transition: var(--unhover-animation) !important; 
 }
 
 .tabbrowser-tab:not(:hover) .tab-close-button { 
    opacity: 0 !important;
-   transition: opacity var(--unhover-animation) !important; 
+   transition: var(--unhover-animation) !important; 
 }
 
 .tabbrowser-tab:not([pinned]):hover .tab-close-button {
-  opacity: 1 !important;
+  display: block !important;
   transition: var(--hover-animation) !important; 
 }
 
-.tabbrowser-tab[visuallyselected]:not(:active) {
-  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2) !important;
-}
-
-.tabbrowser-tab[visuallyselected]:active {
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.15) !important;
-  transition: box-shadow var(--hover-animation) !important; 
-}
-	
-.tab-close-button:not(:hover) {
+.tabbrowser-tab .tab-close-button:not(hover) {
   filter: opacity(var(--unhover-opacity)) grayscale(100%) !important;
-  transition: filter var(--unhover-animation) !important; 
+  transition: var(--unhover-animation) !important; 
 }
 
-.tab-close-button:hover {
+.tabbrowser-tab .tab-close-button:hover {
   filter: opacity(100%) grayscale(0%) !important;
-  transition: filter var(--hover-animation) !important; 
+  transition: var(--hover-animation) !important; 
 }
 
-.tab-close-button:active {
+.tabbrowser-tab .tab-close-button:active {
   filter: var(--active-filter) !important;
 }
+
 
 /* -------------------------------2----------------------------------------------------------------------- */ 
 
 
- /* ------------------------ overflow button styling                                                    */
+/* 
+   O V E R F L O W   R E P L A C E M E N T   F O R   M E N U  B U T T O N
+    (delete this and add next section to retain the regular menu button)
+ */
+
+
+/*
+ * removes hamburger menu
+ */
+
+/* #PanelUI-button {
+  display: none !important;
+}
+
+
+ ------------------------ overflow button styling                                                    */
 
 #nav-bar-overflow-button > .toolbarbutton-icon { 
+  background: none !important;
   list-style-image: url("material/menubutton.svg") !important;
-  transform: scale(0.85) !important;
+  transform: scale(0.85);
+  
 }
 
 #nav-bar-overflow-button:not(:hover) > .toolbarbutton-icon { 
-  filter: grayscale(100%) !important;
-  opacity: calc(var(--unhover-opacity) * 133%) !important;
+  filter: grayscale(100%);
+  opacity: calc(var(--unhover-opacity) * 133%);
   transition: var(--unhover-animation) !important;
 }
 
 #nav-bar-overflow-button:hover > .toolbarbutton-icon { 
-  filter: grayscale(0%) !important;
-  opacity: 1.0 !important;
+  filter: grayscale(0%);
+  opacity: 1.0;
   transition: var(--hover-animation) !important;
 }
 
 #nav-bar-overflow-button:active > .toolbarbutton-icon { 
-  filter: var(--active-filter) !important;
+  filter: var(--active-filter);
 }
 
 
-/* OPTIONAL: delete above(up until the '2' page divider) 
- * and add code below to style the menu button instead---------------------------------------------------------- 
+/* OPTIONAL: DELETE ABOVE(up until the '2' page divider) 
+ * AND ADD THE CODE BELOW(instructions added) TO RETAIN NORMAL MENU BUTTON---------------------------------------------------------- 
  */
 
 
@@ -162,25 +175,51 @@ remove this and the top one for activation ---- > */
 /* 
     B U T T O N     S T Y L I N G 
  */
+	
  
+box toolbarbutton:hover {
+	background-color: rgba(130, 130, 130, 0.2) !important;
+	fill: var(--blue-color) !important;
+	transition: background-color none !important;
+}
+
+box toolbarbutton:hover .toolbarbutton-icon {
+	fill: var(--blue-color) !important;
+}
+
+box toolbarbutton:not(:hover) .toolbarbutton-icon {
+	opacity: var(--unhover-opacity);
+}
+
+#PersonalToolbar {
+	overflow-y: hidden !important;
+	overflow-x: auto !important;
+	scrollbar-width: none;
+	transition: 0.2s linear !important;
+}
+
+
+
+#PlacesToolbarItems {
+	overflow: visible !important;
+}
+
+#PersonalToolbar .bookmark-item:not(:hover) {
+	opacity: var(--unhover-opacity);
+	filter: grayscale(40%) !important;
+}
+
+
+
 /* -----------------------icon default state */
 
-
-toolbarbutton:not(.widget-overflow-list.toolbarbutton-icon):not(.titlebar-button):not(.bookmark-item) {
+toolbarbutton:not(.titlebar-button), .toolbarbutton-1, .toolbarbutton-icon {
   background: unset !important;
   box-shadow: unset !important;
-  border: unset !important;
-  border-radius: 2em !important;
+  border: 0 !important;
   fill: var(--default-color) !important;
 }
-
-.findbar-find-next, .findbar-find-previous {
-  background: unset !important;
-  box-shadow: unset !important;
-  border: unset !important;
-  fill: var(--default-color) !important;
-}
-             
+                     
 /* ----------------------icon disabled state */
 
 toolbarbutton[disabled]:not(#stop-button):not(#reload-button) {
@@ -196,14 +235,19 @@ toolbarbutton[disabled]:active > .toolbarbutton-icon {
 
 toolbarbutton[disabled]:hover:not(:active) > .toolbarbutton-icon {
     fill: var(--disabled) !important;
-    transition: fill var(--unhover-animation) !important;
+    transition: var(--unhover-animation) !important;
 }
 
 /* ----------------------icon enabled state */
 
-toolbarbutton:not([disabled]):not(#stop-button):hover, toolbarbutton:not([disabled]):not(#stop-button):hover .toolbarbutton-icon {
+toolbarbutton:not(#stop-button):not(box):hover:not([disabled]), toolbarbutton:not(#stop-button):hover:not([disabled]) .toolbarbutton-icon {
     fill: var(--blue-color) !important;
-    transition: fill var(--hover-animation) !important; 
+    transition: var(--hover-animation); 
+}
+
+toolbarbutton:not(box):not(:hover), toolbarbutton:not(:hover) .toolbarbutton-icon {
+    background-color: transparent;
+    transition: var(--unhover-animation) !important; 
 }
 
 toolbarbutton:active:not([disabled]), toolbarbutton:active:not([disabled]) > .toolbarbutton-icon {
@@ -211,46 +255,14 @@ toolbarbutton:active:not([disabled]), toolbarbutton:active:not([disabled]) > .to
     transition: none !important;
 }
 
-.urlbar-icon:hover {
-	transition: var(--hover-animation) !important;
-}
-
-.urlbar-icon:not(:hover) {
-	transition: var(--unhover-animation) !important;
-}
-
-
 /* code to make back button same size as forward button in all modes anyone? */
-
-.bookmark-item:not(.subviewbutton) {
-	padding: 4px !important;
-	border-radius: 2em !important;
-}
-	
-.bookmark-item:not(.subviewbutton):not(:hover) {
-	opacity: var(--unhover-opacity);
-	transition: var(--unhover-animation) !important;
-}
-
-.bookmark-item:not(:hover) .toolbarbutton-icon {
-	filter: grayscale(30%);
-	transition: var(--unhover-animation) !important;
-}
-
-.subviewbutton:not(:hover) .toolbarbutton-icon {
-    opacity: var(--unhover-opacity);
-}
-
-.bookmark-item:not(.subviewbutton):hover {
-	transition: background var(--hover-animation) !important;
-}
 
 /* ---------------------stopbutton styling(has unique color scheme) */
 
 
 #stop-button:hover:not([disabled]) > .toolbarbutton-icon {
     fill: var(--red-color) !important;
-    transition: fill var(--hover-animation);
+    transition: var(--hover-animation);
 }
 
 
@@ -260,20 +272,20 @@ toolbarbutton:active:not([disabled]), toolbarbutton:active:not([disabled]) > .to
 .tabs-newtab-button > .toolbarbutton-icon { 
   background: none !important;
   list-style-image: url("material/add.svg") !important;
-  transform: scale(0.8) !important;
+  transform: scale(0.8);
 }
 
 .tabs-newtab-button:not(:hover) {
-  filter: opacity(var(--unhover-opacity)) grayscale(100%) !important;
-  transition: filter var(--unhover-animation) !important; 
+  filter: opacity(var(--unhover-opacity)) grayscale(100%);
+  transition: var(--unhover-animation); 
 }
 
 .tabs-newtab-button:hover {
-  transition: filter var(--hover-animation) !important; 
+  transition: var(--hover-animation) !important; 
 }
 
 .tabs-newtab-button:active {
-  filter: var(--active-filter) !important;
+  filter: var(--active-filter);
   transition: none !important;
 }
 
@@ -300,11 +312,18 @@ toolbarbutton:active:not([disabled]), toolbarbutton:active:not([disabled]) > .to
  * textbox styling 
  */
 
-textbox:not(.searchbar-textbox), #urlbar {
+
+#main-window:not([customizing]) .tab-line {
+  display: none !important;
+}
+
+textbox:not(.searchbar-textbox) {
     border: 0 !important;
     border-radius: 2em !important;
     box-shadow: none !important;
     background-color: unset;
+	z-index: 100000 !important;
+	overflow: visible !important;
 }
 
 .searchbar-textbox {
@@ -313,6 +332,8 @@ textbox:not(.searchbar-textbox), #urlbar {
 	border: 0 !important;
     border-radius: 2em !important;
     box-shadow: none !important;
+	z-index: 100000 !important;
+	overflow: visible !important;
 }
 
 textbox:hover:not(.searchbar-textbox) {
@@ -323,12 +344,12 @@ textbox:hover:not(.searchbar-textbox) {
 
 .searchbar-search-button {
     opacity:0;
-    transition: opacity var(--unhover-animation);
+    transition: var(--unhover-animation);
 } 
 
 .searchbar-textbox:hover .searchbar-search-button, .searchbar-textbox[focused=true] .searchbar-search-button {
     opacity: 1;
-    transition: opacity var(--hover-animation);
+    transition: var(--hover-animation);
 }
 
 textbox:not(:hover):not(.searchbar-textbox) {
@@ -340,7 +361,7 @@ textbox:not(:hover):not(.searchbar-textbox) {
 #urlbar[focused=true] {
     background-color: rgba(255, 255, 255, 0.1) !important;
     opacity: calc(var(--unhover-opacity)*1.1667) !important;
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2) !important;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3) !important;
     transition: var(--hover-animation);
 }
 
@@ -350,8 +371,6 @@ textbox[focused=true]:not(#urlbar) {
 	transition: var(--hover-animation);
 }
 
-
-
 /* -----------------------------6------------------------------------- */
     
 
@@ -359,20 +378,19 @@ textbox[focused=true]:not(#urlbar) {
  * H T T P S  C E R T I F I C A T E    L A B E L   A U T O    H I D E 
  */
 
-#identity-box {
-	transition: 0.2s ease-out !important;
-}
 
 #identity-box:not(:hover) {
   padding-inline-end: 0px !important;
   margin-right: 8px !important;
-  transition: 0.2s ease-out;
 }
-
 #identity-box:not(:hover) #identity-icon-labels {
+  overflow: hidden;
   width: 0px;
+  transition: var(--unhover-animation);
 } 
-
+#identity-box:hover #identity-icon-labels {
+  transition: var(--hover-animation);
+}
 #identity-box:not(:hover) #identity-icon-labels #identity-icon-country-label {
   display: none;
 }
@@ -380,13 +398,10 @@ textbox[focused=true]:not(#urlbar) {
 
 /* ------------------------------7------------------------------------ */
 
+
 /* 
  *  B O R D E R ( L E S S )   S T Y L I N G
  */
- 
- #main-window:not([customizing]) .tab-line {
-  display: none !important;
-}
 
 box {
 	border: none !important;
@@ -408,23 +423,31 @@ box {
 }
 	
 #navigator-toolbox {
+  border: none !important;
   box-shadow: var(--bottom-shadow) !important;
+  /*margin-top: -1px !important;  / bugs when a tab is dragged */
+  margin-bottom: -1px !important;
 }   
 
 
 #nav-bar {
   /*margin-top: -1px !important;  / bugs when a tab is dragged */
   margin-bottom: -1px !important;
-  border: none !important;
-  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0) !important;
 }   
 
-#PersonalToolbar {
-  margin-top: 2.32499991px !important;
-  transform: scaleY(1.07) !important;
+/* removes border under tabs */
+
+#TabsToolbar, #nav-bar {
+  border: none !important;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0) !important;
 }
 
-findbar {
+#PersonalToolbar {
+  transform: scaleY(1.07) !important;
+  z-index: 8 !important;
+}
+
+.browserContainer > findbar {
   opacity: 0.99999 !important;
   border: none !important;
   box-shadow: var(--top-shadow) !important;
@@ -480,6 +503,33 @@ findbar {
 }
 
 .findbar-find-previous {
-  margin-left: 40px !important;
+  padding-left: 40px !important;
 }
 
+
+
+/* -----------------------------9------------------------------------- */
+
+/* 
+ * Emulate Opera tab dividers
+ */
+
+
+.tabbrowser-tab::after,
+.tabbrowser-tab::before {
+  margin-top: 9px !important;
+  margin-bottom: 9px !important;
+}
+
+.tabbrowser-tab:hover::after,
+#tabbrowser-tabs:not([movingtab]) > .tabbrowser-tab[beforehovered]::after,
+.tabbrowser-tab[multiselected]::after,
+#tabbrowser-tabs:not([movingtab]) > .tabbrowser-tab[before-multiselected]::after { 
+  visibility: hidden !important;
+}
+
+#tabbrowser-tabs:not([movingtab]) > .tabbrowser-tab[beforeselected-visible]::after,
+#tabbrowser-tabs[movingtab] > .tabbrowser-tab[visuallyselected]::before,
+.tabbrowser-tab[visuallyselected]::after {
+ visibility: hidden !important;
+}
