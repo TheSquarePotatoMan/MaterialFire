@@ -18,7 +18,7 @@
 	--bottom-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
 	--top-shadow: 0px -2px 2px rgba(0, 0, 0, 0.1);
 	--hover-animation: 0.1s linear;
-	--unhover-animation: 0.1s linear;
+	--unhover-animation: 0.2s linear;
 }
 
 /* ---------------------------Tab styling   
@@ -42,20 +42,6 @@
  visibility: hidden !important;
 }
 
-.tabbrowser-tab:not([pinned]):not([visuallyselected]):not(:hover) {
-  opacity: var(--unhover-opacity);
-  transition: opacity var(--unhover-animation) !important; 
-}
-
-.tabbrowser-tab[visuallyselected]:not(:active) {
-  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
-}
-
-.tabbrowser-tab[visuallyselected]:active {
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.15);
-  transition: box-shadow var(--hover-animation) !important; 
-}
-
 .tab-close-button {
    background: none !important;
    list-style-image: url("material/close.svg") !important;
@@ -64,18 +50,33 @@
    padding: 6px !important;
    position: relative !important;
    margin-right: -7px !important;
+   display: block !important;
+}
+
+.tabbrowser-tab:not([pinned]):not([visuallyselected]):not(:hover) {
+  opacity: var(--unhover-opacity);
+  transition: var(--unhover-animation) !important; 
 }
 
 .tabbrowser-tab:not(:hover) .tab-close-button { 
    opacity: 0 !important;
    transition: opacity var(--unhover-animation) !important; 
 }
-	
+
 .tabbrowser-tab:not([pinned]):hover .tab-close-button {
-  display: block !important;
+  opacity: 1 !important;
   transition: var(--hover-animation) !important; 
 }
 
+.tabbrowser-tab[visuallyselected]:not(:active) {
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2) !important;
+}
+
+.tabbrowser-tab[visuallyselected]:active {
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.15) !important;
+  transition: box-shadow var(--hover-animation) !important; 
+}
+	
 .tab-close-button:not(:hover) {
   filter: opacity(var(--unhover-opacity)) grayscale(100%) !important;
   transition: filter var(--unhover-animation) !important; 
@@ -96,25 +97,24 @@
  /* ------------------------ overflow button styling                                                    */
 
 #nav-bar-overflow-button > .toolbarbutton-icon { 
-  background: none;
-  list-style-image: url("material/menubutton.svg");
-  transform: scale(0.85);
+  list-style-image: url("material/menubutton.svg") !important;
+  transform: scale(0.85) !important;
 }
 
 #nav-bar-overflow-button:not(:hover) > .toolbarbutton-icon { 
-  filter: grayscale(100%);
-  opacity: calc(var(--unhover-opacity) * 133%);
-  transition: var(--unhover-animation);
+  filter: grayscale(100%) !important;
+  opacity: calc(var(--unhover-opacity) * 133%) !important;
+  transition: var(--unhover-animation) !important;
 }
 
 #nav-bar-overflow-button:hover > .toolbarbutton-icon { 
-  filter: grayscale(0%);
-  opacity: 1.0;
-  transition: var(--hover-animation);
+  filter: grayscale(0%) !important;
+  opacity: 1.0 !important;
+  transition: var(--hover-animation) !important;
 }
 
 #nav-bar-overflow-button:active > .toolbarbutton-icon { 
-  filter: var(--active-filter);
+  filter: var(--active-filter) !important;
 }
 
 
@@ -170,11 +170,12 @@ toolbarbutton:not(.widget-overflow-list.toolbarbutton-icon):not(.titlebar-button
   background: unset !important;
   box-shadow: unset !important;
   border: unset !important;
+  border-radius: 2em !important;
   fill: var(--default-color) !important;
 }
 
 .findbar-find-next, .findbar-find-previous {
-	 background: unset !important;
+  background: unset !important;
   box-shadow: unset !important;
   border: unset !important;
   fill: var(--default-color) !important;
@@ -200,15 +201,24 @@ toolbarbutton[disabled]:hover:not(:active) > .toolbarbutton-icon {
 
 /* ----------------------icon enabled state */
 
-toolbarbutton:not(#stop-button):hover:not([disabled]), toolbarbutton:not(#stop-button):hover:not([disabled]) .toolbarbutton-icon {
+toolbarbutton:not([disabled]):not(#stop-button):hover, toolbarbutton:not([disabled]):not(#stop-button):hover .toolbarbutton-icon {
     fill: var(--blue-color) !important;
-    transition: fill var(--hover-animation); 
+    transition: fill var(--hover-animation) !important; 
 }
 
 toolbarbutton:active:not([disabled]), toolbarbutton:active:not([disabled]) > .toolbarbutton-icon {
     filter: var(--active-filter);
     transition: none !important;
 }
+
+.urlbar-icon:hover {
+	transition: var(--hover-animation) !important;
+}
+
+.urlbar-icon:not(:hover) {
+	transition: var(--unhover-animation) !important;
+}
+
 
 /* code to make back button same size as forward button in all modes anyone? */
 
@@ -217,14 +227,22 @@ toolbarbutton:active:not([disabled]), toolbarbutton:active:not([disabled]) > .to
 	border-radius: 2em !important;
 }
 	
-.bookmark-item:not(:hover) > .toolbarbutton-icon {
+.bookmark-item:not(.subviewbutton):not(:hover) {
 	opacity: var(--unhover-opacity);
+	transition: var(--unhover-animation) !important;
+}
+
+.bookmark-item:not(:hover) .toolbarbutton-icon {
 	filter: grayscale(30%);
 	transition: var(--unhover-animation) !important;
 }
 
+.subviewbutton:not(:hover) .toolbarbutton-icon {
+    opacity: var(--unhover-opacity);
+}
+
 .bookmark-item:not(.subviewbutton):hover {
-	transition: var(--hover-animation) !important;
+	transition: background var(--hover-animation) !important;
 }
 
 /* ---------------------stopbutton styling(has unique color scheme) */
@@ -242,12 +260,12 @@ toolbarbutton:active:not([disabled]), toolbarbutton:active:not([disabled]) > .to
 .tabs-newtab-button > .toolbarbutton-icon { 
   background: none !important;
   list-style-image: url("material/add.svg") !important;
-  transform: scale(0.8);
+  transform: scale(0.8) !important;
 }
 
 .tabs-newtab-button:not(:hover) {
-  filter: opacity(var(--unhover-opacity)) grayscale(100%);
-  transition: filter var(--unhover-animation); 
+  filter: opacity(var(--unhover-opacity)) grayscale(100%) !important;
+  transition: filter var(--unhover-animation) !important; 
 }
 
 .tabs-newtab-button:hover {
@@ -255,7 +273,7 @@ toolbarbutton:active:not([disabled]), toolbarbutton:active:not([disabled]) > .to
 }
 
 .tabs-newtab-button:active {
-  filter: var(--active-filter);
+  filter: var(--active-filter) !important;
   transition: none !important;
 }
 
@@ -342,7 +360,7 @@ textbox[focused=true]:not(#urlbar) {
  */
 
 #identity-box {
-	transition: 0.2s ease-out;
+	transition: 0.2s ease-out !important;
 }
 
 #identity-box:not(:hover) {
@@ -361,7 +379,6 @@ textbox[focused=true]:not(#urlbar) {
 
 
 /* ------------------------------7------------------------------------ */
-
 
 /* 
  *  B O R D E R ( L E S S )   S T Y L I N G
