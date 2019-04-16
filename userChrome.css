@@ -251,6 +251,7 @@ toolbarbutton:not([disabled]):active, toolbarbutton:not([disabled]):active .tool
 
 #widget-overflow-fixed-list .toolbarbutton-1:not(:hover) > .toolbarbutton-icon, .subviewbutton:not(.bookmark-item):not(:hover) > .toolbarbutton-icon {
 	opacity: 0;
+	transition: none !important;
 }
 
 
