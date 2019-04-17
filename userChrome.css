@@ -59,6 +59,16 @@
   transition: var(--unhover-animation) !important; 
 }
 
+.tabbrowser-tab[pinned] .tab-close-button {
+  display: none !important;
+}
+
+
+.tabbrowser-tab:not([pinned]):not([visuallyselected]):not(:hover) {
+  opacity: var(--unhover-opacity);
+  transition: var(--unhover-animation) !important; 
+}
+
 .tabbrowser-tab:not(:hover) .tab-close-button { 
    opacity: 0 !important;
    transition: var(--unhover-animation) !important; 
