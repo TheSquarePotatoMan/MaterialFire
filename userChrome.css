@@ -177,6 +177,10 @@ remove this and the top one for activation ---- > */
              
 /* ----------------------disabled state */
 
+toolbarbutton[disabled] {
+    transition: var(--unhover-animation) !important;
+}
+
 toolbarbutton[disabled]:active > .toolbarbutton-icon {
     opacity: 1.0 !important;
     fill: var(--disabled-active-color) !important;
