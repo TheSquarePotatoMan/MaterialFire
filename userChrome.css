@@ -177,20 +177,15 @@ remove this and the top one for activation ---- > */
              
 /* ----------------------disabled state */
 
-toolbarbutton[disabled]:not(#stop-button):not(#reload-button):not(:hover) {
-    opacity: var(--disabled-opacity) !important;
-	fill: var(--default-color) !important;
-}
-              
-
 toolbarbutton[disabled]:active > .toolbarbutton-icon {
     opacity: 1.0 !important;
     fill: var(--disabled-active-color) !important;
     transition: var(--active-animation) !important;
 }
 
-toolbarbutton[disabled]:hover:not(:active) > .toolbarbutton-icon {
-    fill: var(--disabled) !important;
+toolbarbutton[disabled]:not(:active) > .toolbarbutton-icon {
+    fill: var(--default-color) !important;
+	opacity: var(--disabled-opacity) !important;
     transition: var(--unhover-animation) !important;
 }
 
@@ -242,6 +237,7 @@ toolbarbutton:not([disabled]):active, toolbarbutton:not([disabled]):active .tool
 }
 
 .bookmark-item:not(.subviewbutton):hover, .webextension-browser-action:hover {
+	background-color: rgba(130, 130, 130, 0.12) !important;
 	opacity: 1 !important;
 }
 
@@ -252,6 +248,11 @@ toolbarbutton:not([disabled]):active, toolbarbutton:not([disabled]):active .tool
 #widget-overflow-fixed-list .toolbarbutton-1:not(:hover) > .toolbarbutton-icon, .subviewbutton:not(.bookmark-item):not(:hover) > .toolbarbutton-icon {
 	opacity: 0;
 	transition: none !important;
+}
+
+#widget-overflow-fixed-list .toolbarbutton-1:hover > .toolbarbutton-icon, .subviewbutton:not(.bookmark-item):hover > .toolbarbutton-icon {
+	opacity: 1;
+	transition: 0.3s ease-in !important;
 }
 
 
