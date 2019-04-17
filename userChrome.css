@@ -206,7 +206,7 @@ toolbarbutton:not([disabled]):not(#stop-button):not(:active):hover, toolbarbutto
 }
 	
 
-toolbarbutton:not([disabled]):active, toolbarbutton:not([disabled]):active .toolbarbutton-icon, button:active {
+toolbarbutton:not([disabled]):active, toolbarbutton:not([disabled]):not(.bookmark-item):active .toolbarbutton-icon, button:active {
     filter: var(--active-filter);
 	transition: var(--active-animation) !important;
 }
@@ -232,15 +232,11 @@ toolbarbutton:not([disabled]):active, toolbarbutton:not([disabled]):active .tool
 	transition: var(--unhover-animation) !important;
 }
 
-.bookmark-item:not(:hover) .toolbarbutton-icon, .webextension-browser-action:not(:hover) .toolbarbutton-icon {
-	filter: grayscale(30%);
-}
-
 .subviewbutton:not(:hover) .toolbarbutton-icon {
     opacity: var(--unhover-opacity);
 }
 
-.bookmark-item:not(.subviewbutton):hover, .webextension-browser-action:hover {
+.bookmark-item:not(.subviewbutton):not(:active):hover, .webextension-browser-action:not(:active):hover {
 	background-color: rgba(130, 130, 130, 0.12) !important;
 	opacity: 1 !important;
 }
