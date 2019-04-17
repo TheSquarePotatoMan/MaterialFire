@@ -186,7 +186,7 @@ toolbarbutton[disabled]:active > .toolbarbutton-icon {
 toolbarbutton[disabled]:not(:active) > .toolbarbutton-icon {
     fill: var(--default-color) !important;
 	opacity: var(--disabled-opacity) !important;
-    transition: var(--unhover-animation) !important;
+    transition: 0.8s linear !important;
 }
 
 /* ----------------------enabled state */
