@@ -43,7 +43,7 @@
  visibility: hidden !important;
 }
 
-.tab-close-button {
+.tab-close-button:not([pinned]) {
    background: none !important;
    list-style-image: url("material/close.svg") !important;
    width: 22px !important;
@@ -54,17 +54,14 @@
    display: block !important;
 }
 
-.tabbrowser-tab:not([pinned]):not([visuallyselected]):not(:hover) {
-  opacity: var(--unhover-opacity);
-  transition: var(--unhover-animation) !important; 
+
+.tabbrowser-tab:not([visuallyselected]):-moz-lwtheme-darktext:hover .tab-background {
+    background-color: rgba(200, 200, 200, 0.4) !important;
+	transition: var(--hover-animation) !important;
 }
 
-.tabbrowser-tab[pinned] .tab-close-button {
-  display: none !important;
-}
-
-
-.tabbrowser-tab:not([pinned]):not([visuallyselected]):not(:hover) {
+.tabbrowser-tab:not([visuallyselected]):not(:hover), .tabbrowser-tab:not([visuallyselected]):not(:hover) .tab-background {
+  background: none !important;
   opacity: var(--unhover-opacity);
   transition: var(--unhover-animation) !important; 
 }
@@ -74,7 +71,7 @@
    transition: var(--unhover-animation) !important; 
 }
 
-.tabbrowser-tab:not([pinned]):hover .tab-close-button {
+.tabbrowser-tab:hover .tab-close-button {
   opacity: 1 !important;
   transition: var(--hover-animation) !important; 
 }
@@ -84,7 +81,7 @@
 }
 
 .tabbrowser-tab[visuallyselected]:active {
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.15) !important;
   transition: box-shadow var(--active-animation) !important; 
 }
 	
@@ -179,7 +176,7 @@ remove this and the top one for activation ---- > */
 /* -----------------------default state */
 
 
-#PersonalToolbar .toolbarbutton-icon, #nav-bar .toolbarbutton-icon, #PersonalToolbar .toolbarbutton-1, .findbar-container toolbarbutton, #downloads-button {
+#PersonalToolbar .toolbarbutton-icon, #nav-bar .toolbarbutton-icon, #PersonalToolbar .toolbarbutton-1, .findbar-container toolbarbutton, #downloads-button, .subviewbutton-back {
   background: unset !important;
   box-shadow: unset !important;
   border: unset !important;
@@ -230,7 +227,11 @@ toolbarbutton:not([disabled]):active, toolbarbutton:not([disabled]):not(.bookmar
 }
 
 
-/* code to make back button same size as forward button in all modes anyone? */
+:root:not([uidensity="compact"]) #back-button {
+    transform: scale(0.927);
+}
+
+
 
 .bookmark-item:not(.subviewbutton) {
 	padding: 4px !important;
@@ -238,7 +239,7 @@ toolbarbutton:not([disabled]):active, toolbarbutton:not([disabled]):not(.bookmar
 }
 	
 .bookmark-item:not(.subviewbutton):not(:hover), .webextension-browser-action:not(:hover) {
-	opacity: var(--unhover-opacity);
+	opacity: calc(var(--unhover-opacity)*1.35);
 	transition: var(--unhover-animation) !important;
 }
 
@@ -251,18 +252,18 @@ toolbarbutton:not([disabled]):active, toolbarbutton:not([disabled]):not(.bookmar
 	opacity: 1 !important;
 }
 
-#widget-overflow-fixed-list .toolbarbutton-1, .subviewbutton {
+#widget-overflow-fixed-list .toolbarbutton-1, .subviewbutton:not(.panel-subview-footer) {
 	transition:none !important;
 }
 
-#widget-overflow-fixed-list .toolbarbutton-1:not(:hover) > .toolbarbutton-icon, .subviewbutton:not(.bookmark-item):not(:hover) > .toolbarbutton-icon {
+#widget-overflow-fixed-list .toolbarbutton-1:not(#zoom-in-button):not(#zoom-out-button):not(:hover) > .toolbarbutton-icon, .subviewbutton:not(.bookmark-item):not(:hover) > .toolbarbutton-icon {
 	opacity: 0;
 	transition: none !important;
 }
 
 #widget-overflow-fixed-list .toolbarbutton-1:hover > .toolbarbutton-icon, .subviewbutton:not(.bookmark-item):hover > .toolbarbutton-icon {
 	opacity: 1;
-	transition: 0.3s ease-in !important;
+	transition: 0.2s ease-in !important;
 }
 
 
@@ -312,7 +313,7 @@ toolbarbutton:not([disabled]):active, toolbarbutton:not([disabled]):not(.bookmar
  * textbox styling 
  */
 
-textbox:not(.searchbar-textbox), #urlbar {
+textbox:not(.searchbar-textbox), #urlbar, #search-box {
     border: 0 !important;
     border-radius: 2em !important;
     box-shadow: none !important;
@@ -349,10 +350,16 @@ textbox:not(:hover):not(.searchbar-textbox) {
     transition: var(--unhover-animation);
 }
 
-#urlbar[focused=true] {
-    background-color: rgba(255, 255, 255, 0.1) !important;
+#urlbar[focused=true]:-moz-lwtheme-darktext {
+    background-color: rgba(255, 255, 255, 0.8) !important;
     opacity: calc(var(--unhover-opacity)*1.1667) !important;
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2) !important;
+    transition: var(--hover-animation);
+}
+
+#urlbar[focused=true]:-moz-lwtheme-brighttext {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    opacity: calc(var(--unhover-opacity)*1.1667) !important;
     transition: var(--hover-animation);
 }
 
@@ -396,6 +403,15 @@ textbox[focused=true]:not(#urlbar) {
  *  B O R D E R ( L E S S )   S T Y L I N G
  */
  
+ .panel-subview-footer {
+	 border: none !important;
+ }
+ 
+.chromeclass-extrachrome {
+	 border: none !important;
+	 box-shadow: var(--shadow) !important;
+}
+ 
  #main-window:not([customizing]) .tab-line {
   display: none !important;
 }
@@ -415,6 +431,10 @@ box {
   padding-bottom: 1px;
 } 
 
+.panel-subview-body, .tree-body {
+	scrollbar-width: thin !important;
+}
+
 #customization-footer {
 	border: none !important;
 }
@@ -428,16 +448,17 @@ box {
   /*margin-top: -1px !important;  / bugs when a tab is dragged */
   margin-bottom: -1px !important;
   border: none !important;
-  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0) !important;
+  box-shadow: 0 -1px 0px rgba(0, 0, 0, 0) !important;
 }   
 
 #PersonalToolbar {
-  margin-top: 2.32499991px !important;
+  margin-top: 1px !important;
   transform: scaleY(1.07) !important;
+  transform-origin: top !important;
 }
 
 findbar {
-  opacity: 0.99999 !important;
+  opacity: 0.9 !important;
   border: none !important;
   box-shadow: var(--top-shadow) !important;
 }
@@ -468,6 +489,7 @@ findbar {
 .findbar-button {
    border-radius: 2em !important;
    transition: var(--unhover-animation) !important;
+   display: inline-block !important;
 }
 
 .findbar-button:hover {
@@ -491,7 +513,14 @@ findbar {
    transform-origin: left;
 }
 
-.findbar-find-previous {
+.findbar-find-previous, .findbar-find-next {
+  display: inline-block !important;
+  position: relative !important;
+}
+
+.findbar-find-previous{
   margin-left: 40px !important;
 }
+
+
 
