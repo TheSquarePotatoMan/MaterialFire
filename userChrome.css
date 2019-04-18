@@ -24,12 +24,16 @@
 
 /* ---------------------------Tab styling   
                                                        */ 
-.tabbrowser-tab::after,
-.tabbrowser-tab::before {
+.tabbrowser-tab:not(:last-child)::after, .tabbrowser-tab::before {
   margin-top: 9px !important;
   margin-bottom: 9px !important;
-  opacity: 0.2 !important;
+  opacity: 0.3 !important;
 }
+
+.tabbrowser-tab:last-child::after {
+  display: none !important;
+}
+
 
 .tabbrowser-tab:hover::after,
 #tabbrowser-tabs:not([movingtab]) > .tabbrowser-tab[beforehovered]::after,
