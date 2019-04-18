@@ -14,7 +14,7 @@
 	--active-filter: brightness(70%);
 	--unhover-opacity: 0.65;
 	--disabled-opacity: 0.5;
-    --shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
+    --shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 	--bottom-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
 	--top-shadow: 0px -2px 2px rgba(0, 0, 0, 0.1);
 	--hover-animation: 0.1s linear;
@@ -28,6 +28,7 @@
 .tabbrowser-tab::before {
   margin-top: 9px !important;
   margin-bottom: 9px !important;
+  opacity: 0.2 !important;
 }
 
 .tabbrowser-tab:hover::after,
@@ -56,7 +57,7 @@
 
 
 .tabbrowser-tab:not([visuallyselected]):-moz-lwtheme-darktext:hover .tab-background {
-    background-color: rgba(200, 200, 200, 0.4) !important;
+    background-color: rgba(255, 255, 255, 0.3) !important;
 	transition: var(--hover-animation) !important;
 }
 
@@ -76,8 +77,14 @@
   transition: var(--hover-animation) !important; 
 }
 
-.tabbrowser-tab[visuallyselected]:not(:active) {
+.tabbrowser-tab[visuallyselected]:not(:hover) {
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2) !important;
+  transition: var(--unhover-animation) !important;
+}
+
+.tabbrowser-tab[visuallyselected]:hover {
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.3) !important;	
+  transition: var(--hover-animation) !important;
 }
 
 .tabbrowser-tab[visuallyselected]:active {
@@ -230,7 +237,6 @@ toolbarbutton:not([disabled]):active, toolbarbutton:not([disabled]):not(.bookmar
 :root:not([uidensity="compact"]) #back-button {
     transform: scale(0.927);
 }
-
 
 
 .bookmark-item:not(.subviewbutton) {
