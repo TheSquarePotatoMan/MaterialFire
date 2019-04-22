@@ -85,14 +85,8 @@
 
 .tab-close-button:active {
   padding: 9px !important;
-  transition: padding 0.1s !important;
+  transition: padding 0.2s !important;
 }
-
-
-
-
-
-
 
 .tabbrowser-tab:not([visuallyselected]):-moz-lwtheme-darktext:hover .tab-background {
     background-color: rgba(255, 255, 255, 0.3) !important;
@@ -140,6 +134,11 @@
 .tabbrowser-tab[visuallyselected]:active {
   box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.15) !important;
   transition: box-shadow var(--active-animation) !important; 
+}
+
+.tabbrowser-arrowscrollbox > .arrowscrollbox-overflow-start-indicator:not([collapsed]),
+.tabbrowser-arrowscrollbox > .arrowscrollbox-overflow-end-indicator:not([collapsed]) {
+  background-image: none !important;
 }
 
 
@@ -352,11 +351,11 @@ toolbarbutton:not([disabled]):active, toolbarbutton:not([disabled]):not(.bookmar
   list-style-image: url("material/add.svg") !important;
 }
 
-:root:not([uidensity="touch"]) .tabs-newtab-button > .toolbarbutton-icon, :root:not([uidensity="touch"]) #new-tab-button > .toolbarbutton-icon { 
+:root:not([uidensity="touch"]) .tabs-newtab-button:not(:active) > .toolbarbutton-icon, :root:not([uidensity="touch"]) #new-tab-button:not(:active) > .toolbarbutton-icon { 
   padding: 8px !important;
 }
 
-:root[uidensity="touch"] .tabs-newtab-button > .toolbarbutton-icon, :root[uidensity="touch"] #new-tab-button > .toolbarbutton-icon { 
+:root[uidensity="touch"] .tabs-newtab-button:not(:active) > .toolbarbutton-icon, :root[uidensity="touch"] #new-tab-button:not(:active) > .toolbarbutton-icon { 
   padding: 11px !important;
 }
 
@@ -365,8 +364,8 @@ toolbarbutton:not([disabled]):active, toolbarbutton:not([disabled]):not(.bookmar
 }
 
 .tabs-newtab-button:active > .toolbarbutton-icon, #new-tab-button:active > .toolbarbutton-icon  {
-  transform: scale(1.2) !important;
-  transition: transform 0.2s !important;
+  padding: 6px !important;
+  transition: padding 0.2s !important;
 }
 
 
