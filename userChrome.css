@@ -54,34 +54,19 @@
 .close-icon:not([pinned]) {
     list-style-image: url("material/close.svg") !important;
     background: none !important;
-	 display: inline block !important;
+	display: inline block !important;
 }
 
-.close-icon:not(.tab-close-button) {
-	transform: scale(0.5) !important;
-}
-
-.tab-close-button {
+.close-icon .toolbarbutton-icon, .tab-close-button {
    width: 22px !important;
    height: 22px !important;
    padding: 6px !important;
    position: relative !important;
+}
+
+.tab-close-button {
    margin-right: -7px !important;
 }
-
-.close-icon:active {
-  filter: var(--active-filter) !important;
-  transition: var(--active-animation) !important;
-}
-
-.tab-close-button:active {
-  transform: scale(0.8) !important;
-}
-
-.close-icon:not(.tab-close-button):active {
-  transform: scale(0.4) !important;
-}
-
 
 .close-icon:not(:hover) {
   filter: opacity(var(--unhover-opacity)) grayscale(100%) !important;
@@ -89,9 +74,22 @@
 }
 
 .close-icon:not(:active):hover {
-  opacity: 100% !important;
   transition: var(--hover-animation) !important; 
 }
+
+.close-icon:active {
+  filter: var(--active-filter) !important;
+  transition: filter var(--active-animation) !important;
+}
+
+
+.tab-close-button:active {
+  padding: 9px !important;
+  transition: padding 0.1s !important;
+}
+
+
+
 
 
 
@@ -121,7 +119,7 @@
 .tabbrowser-tab:not(:hover) .close-icon { 
    width: 0 !important;
    opacity: 0 !important;
-   transition: opacity var(--unhover-animation), width var(--unhover-animation) var(--unhover-animation) !important; 
+   transition: opacity var(--unhover-animation), width var(--unhover-animation) var(--hover-animation) !important; 
 }
 
 .tabbrowser-tab:not(:active):hover .close-icon {
@@ -152,7 +150,14 @@
 
 #nav-bar-overflow-button > .toolbarbutton-icon { 
   list-style-image: url("material/menubutton.svg") !important;
-  transform: scale(0.85) !important;
+}
+
+:root:not([uidensity="touch"]) #nav-bar-overflow-button > .toolbarbutton-icon { 
+  padding: 7.32px !important;
+}
+
+:root[uidensity="touch"] #nav-bar-overflow-button > .toolbarbutton-icon { 
+  padding: 10px !important;
 }
 
 #nav-bar-overflow-button:not(:hover) > .toolbarbutton-icon { 
@@ -221,7 +226,7 @@ remove this and the top one for activation ---- > */
 /* -----------------------default state */
 
 
-#PersonalToolbar .toolbarbutton-icon, #nav-bar .toolbarbutton-icon, #PersonalToolbar .toolbarbutton-1, .findbar-container toolbarbutton, #downloads-button, .subviewbutton-back {
+.toolbarbutton-icon, #PersonalToolbar .toolbarbutton-1, .findbar-container toolbarbutton, #downloads-button, .subviewbutton-back {
   background: unset !important;
   box-shadow: unset !important;
   border: unset !important;
@@ -258,7 +263,7 @@ toolbarbutton:not([disabled]):not(#stop-button):not(:active):hover, toolbarbutto
 }
 	
 
-toolbarbutton:not([disabled]):active, toolbarbutton:not([disabled]):not(.bookmark-item):active .toolbarbutton-icon, button:active {
+toolbarbutton:not([disabled]):active, toolbarbutton:not([disabled]):not(.bookmark-item):not(.close-icon):not(.tabs-newtab-button):active .toolbarbutton-icon, button:active {
     filter: var(--active-filter);
 	transition: var(--active-animation) !important;
 }
@@ -272,10 +277,28 @@ toolbarbutton:not([disabled]):active, toolbarbutton:not([disabled]):not(.bookmar
 }
 
 
-:root:not([uidensity="compact"]) #back-button {
-    transform: scale(0.927);
+:root:not([uidensity="compact"]):not([uidensity="touch"]) #back-button {
+    height: 28px !important;
+	width: 36px !important;
+	padding-left: 2px !important;
+	padding-right: 2px !important;
 }
 
+:root:not([uidensity="compact"]):not([uidensity="touch"]) #back-button .toolbarbutton-icon {
+	padding-top: 6.9px !important;
+	padding-bottom: 6.9px !important;
+	padding-left: 0px !important;
+	padding-right: 0px !important;
+}
+
+:root[uidensity="touch"] #back-button {
+    height: 34px !important;
+	width: 38px !important;
+	padding-left: 0px !important;
+	padding-right: 0px !important;
+	padding-top: 0.7px !important;
+	padding-bottom: 0.7px !important;
+}
 
 .bookmark-item:not(.subviewbutton) {
 	padding: 4px !important;
@@ -300,15 +323,15 @@ toolbarbutton:not([disabled]):active, toolbarbutton:not([disabled]):not(.bookmar
 	transition:none !important;
 }
 
-#widget-overflow-fixed-list .toolbarbutton-1:not(#zoom-in-button):not(#zoom-out-button):not(:hover) > .toolbarbutton-icon, .subviewbutton:not(.bookmark-item):not(:hover) > .toolbarbutton-icon {
-	opacity: 0;
+#widget-overflow-fixed-list .toolbarbutton-1:not(#zoom-in-button):not(#zoom-out-button):not(.subviewbutton-back):not(:hover) > .toolbarbutton-icon, .subviewbutton:not(.bookmark-item):not(.subviewbutton-back):not(:hover) > .toolbarbutton-icon {
+	transform: scale(0);
 	transition: none !important;
 }
 
 #widget-overflow-fixed-list .toolbarbutton-1:hover > .toolbarbutton-icon, .subviewbutton:not(.bookmark-item):hover > .toolbarbutton-icon {
-	opacity: 1;
-	transition: 0.2s ease-in !important;
+	transition: 0.1s ease-in !important;
 }
+
 
 
 
@@ -324,18 +347,26 @@ toolbarbutton:not([disabled]):active, toolbarbutton:not([disabled]):not(.bookmar
 /* ----------------------new tab button styling (has new icon)  */
 
 
-.tabs-newtab-button > .toolbarbutton-icon { 
+.tabs-newtab-button > .toolbarbutton-icon, #new-tab-button > .toolbarbutton-icon { 
   background: none !important;
   list-style-image: url("material/add.svg") !important;
-  transform: scale(0.8) !important;
 }
 
-.tabs-newtab-button:not(:hover) {
+:root:not([uidensity="touch"]) .tabs-newtab-button > .toolbarbutton-icon, :root:not([uidensity="touch"]) #new-tab-button > .toolbarbutton-icon { 
+  padding: 8px !important;
+}
+
+:root[uidensity="touch"] .tabs-newtab-button > .toolbarbutton-icon, :root[uidensity="touch"] #new-tab-button > .toolbarbutton-icon { 
+  padding: 11px !important;
+}
+
+.tabs-newtab-button:not(:hover):not(:active), #new-tab-button:not(:hover):not(:active) > .toolbarbutton-icon  {
   filter: opacity(var(--unhover-opacity)) grayscale(100%) !important;
 }
 
-.tabs-newtab-button:active {
-  transform: scale(0.8) !important;
+.tabs-newtab-button:active > .toolbarbutton-icon, #new-tab-button:active > .toolbarbutton-icon  {
+  transform: scale(1.2) !important;
+  transition: transform 0.2s !important;
 }
 
 
@@ -377,21 +408,29 @@ textbox:not(.searchbar-textbox), #urlbar, #search-box {
     box-shadow: none !important;
 }
 
-textbox:hover:not(.searchbar-textbox) {
+textbox:hover {
     background-color: rgba(130, 130, 130, 0.12) !important;
     opacity: calc(var(--unhover-opacity)*1.1667);
     transition: var(--hover-animation);
 }
 
-.searchbar-search-button {
-    opacity:0;
-    transition: opacity var(--unhover-animation);
+
+.searchbar-textbox {
+	text-align: left !important;
+}
+
+
+.searchbar-textbox:not([focused=true]) .searchbar-search-button { 
+    width: 0px !important;
+	opacity: 0;
+	margin-left: -20px !important;
+    transition: var(--unhover-animation), width 0s;
 } 
 
-.searchbar-textbox:hover .searchbar-search-button, .searchbar-textbox[focused=true] .searchbar-search-button {
-    opacity: 1;
-    transition: opacity var(--hover-animation);
+.searchbar-textbox[focused=true] .searchbar-search-button {
+    transition: var(--hover-animation), width 0s;
 }
+
 
 textbox:not(:hover):not(.searchbar-textbox) {
     background-color: transparent !important;
@@ -412,8 +451,8 @@ textbox:not(:hover):not(.searchbar-textbox) {
     transition: var(--hover-animation);
 }
 
-textbox[focused=true]:not(#urlbar) {
-    background-color: rgba(130, 130, 130, 0.24) !important;
+textbox[focused=true]:not(#urlbar), .searchbar-textbox:hover {
+    background-color: rgba(130, 130, 130, 0.2) !important;
     opacity: calc(var(--unhover-opacity)*1.1667) !important;
 	transition: var(--hover-animation);
 }
@@ -481,9 +520,23 @@ box {
 } 
 
 .panel-subview-body, .tree-body {
-	scrollbar-width: thin !important;
+	scrollbar-width: none !important;
 }
 
+#bookmarks-view scrollbar {
+	-moz-appearance: none !important;
+	display: none !important;
+}
+
+#sidebar-splitter {
+	box-shadow: 3px 0px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+#sidebar-header {
+	border: none !important;
+}
+ 
+ 
 #customization-footer {
 	border: none !important;
 }
@@ -492,19 +545,14 @@ box {
   box-shadow: var(--bottom-shadow) !important;
 }   
 
+#navigator-toolbox::after {
+	border-bottom: 0px !important;
+}
 
-#nav-bar {
-  /*margin-top: -1px !important;  / bugs when a tab is dragged */
-  margin-bottom: -1px !important;
-  border: none !important;
+#nav-bar { 
   box-shadow: 0 -1px 0px rgba(0, 0, 0, 0) !important;
 }   
 
-#PersonalToolbar {
-  margin-top: 1px !important;
-  transform: scaleY(1.07) !important;
-  transform-origin: top !important;
-}
 
 findbar {
   opacity: 0.9 !important;
