@@ -10,6 +10,28 @@
 /* ^^^^^ REMOVE THIS TO MAKE THE LAST TAB DIVIDER VISIBLE ^^^^^^^^ */
 
 
+#back-button {
+	list-style-image: url(chrome://browser/skin/arrow-left.svg) !important;
+	transform: rotate(360deg) scale(1.2) !important;
+}
+
+#forward-button {
+	list-style-image: url(chrome://browser/skin/arrow-left.svg) !important;
+	transform: rotate(180deg) scale(1.2) !important;
+	margin-left: -5px !important;
+}
+
+:root:not([customizing]) #forward-button[disabled]:not(:active), :root:not([customizing]) #back-button[disabled]:not(:active) {
+	margin-right: -24px !important;
+	opacity: 0 !important;
+	transform: scale(0) !important;
+	transition: margin 0.5s, opacity 0.2s, transform 0s 0.6s !important;
+}
+
+:root:not([uidensity=compact]) #back-button {
+	transform: scale(1.07) !important;
+}
+/*-------^^^^^^^^^^^^^^^^^^^^^^^REMOVE THIS FOR OLD NAV BUTTONS^^^^^^^^^^^^^^^^^^^^^^^^^^^-------------------*/ 
 
 /* ------------------------------1--V A R I A B L E S---------------------------------------------------------- */
 
@@ -275,28 +297,14 @@ toolbarbutton:not([disabled]):active, toolbarbutton:not([disabled]):not(.bookmar
 	transition: var(--unhover-animation) !important;
 }
 
-
-:root:not([uidensity="compact"]):not([uidensity="touch"]) #back-button {
-    height: 28px !important;
-	width: 36px !important;
-	padding-left: 2px !important;
-	padding-right: 2px !important;
+#urlbar:not(:hover) .urlbar-icon:not([starred]), .urlbar-icon:not([starred]):not(:hover) {
+	opacity: 0 !important;
+	transition: opacity var(--unhover-animation) !important;
 }
 
-:root:not([uidensity="compact"]):not([uidensity="touch"]) #back-button .toolbarbutton-icon {
-	padding-top: 6.9px !important;
-	padding-bottom: 6.9px !important;
-	padding-left: 0px !important;
-	padding-right: 0px !important;
-}
-
-:root[uidensity="touch"] #back-button {
-    height: 34px !important;
-	width: 38px !important;
-	padding-left: 0px !important;
-	padding-right: 0px !important;
-	padding-top: 0.7px !important;
-	padding-bottom: 0.7px !important;
+#urlbar:hover:not([focused=true]) .urlbar-icon {
+	opacity: 1 !important;
+	transition: opacity var(--hover-animation) !important;
 }
 
 .bookmark-item:not(.subviewbutton) {
@@ -469,19 +477,19 @@ textbox[focused=true]:not(#urlbar), .searchbar-textbox:hover {
 	transition: 0.2s ease-out !important;
 }
 
+#identity-icon {
+	opacity: 0 !important;
+	margin-right: -20px !important;
+}
+
 #identity-box:not(:hover) {
   padding-inline-end: 0px !important;
-  margin-right: 8px !important;
   transition: 0.2s ease-out;
 }
 
-#identity-box:not(:hover) #identity-icon-labels {
-  width: 0px;
+#identity-box:not(:hover) #identity-icon-labels, #identity-box:not(:hover) #identity-icon-country-label {
+  display: none !important;
 } 
-
-#identity-box:not(:hover) #identity-icon-labels #identity-icon-country-label {
-  display: none;
-}
 
 
 /* ------------------------------7------------------------------------ */
@@ -554,7 +562,7 @@ box {
 
 
 findbar {
-  opacity: 0.9 !important;
+  position: relative !important;
   border: none !important;
   box-shadow: var(--top-shadow) !important;
 }
@@ -601,6 +609,3 @@ findbar {
 .findbar-find-previous{
   margin-left: 40px !important;
 }
-
-
-
