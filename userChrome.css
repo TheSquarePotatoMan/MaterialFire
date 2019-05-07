@@ -143,17 +143,12 @@
   transition: opacity var(--hover-animation), filter var(--hover-animation), width 0s !important; 
 }
 
-.tabbrowser-tab[visuallyselected]:not(:hover) {
+.tabbrowser-tab[visuallyselected]:not([pinned]):not(:hover) {
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2) !important;
-  transition: var(--unhover-animation) !important;
+  transition:  var(--unhover-animation) !important;
 }
 
-.tabbrowser-tab[visuallyselected]:hover {
-  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.3) !important;	
-  transition: var(--hover-animation) !important;
-}
-
-.tabbrowser-tab[visuallyselected]:active {
+.tabbrowser-tab[visuallyselected]:not([pinned]):active {
   box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.15) !important;
   transition: box-shadow var(--active-animation) !important; 
 }
@@ -376,10 +371,6 @@ toolbarbutton:not([disabled]):active, toolbarbutton:not([disabled]):not(.bookmar
   transition: padding 0.2s !important;
 }
 
-
-
-
-
 /* -------------------------------4----------------------------------- */
 
 
@@ -415,7 +406,7 @@ textbox:not(.searchbar-textbox), #urlbar, #search-box {
     box-shadow: none !important;
 }
 
-textbox:hover {
+textbox:not(.searchbar-textbox):hover {
     background-color: rgba(130, 130, 130, 0.12) !important;
     opacity: calc(var(--unhover-opacity)*1.1667);
     transition: var(--hover-animation);
@@ -427,12 +418,18 @@ textbox:hover {
 }
 
 
-.searchbar-textbox:not([focused=true]) .searchbar-search-button { 
+.searchbar-textbox:not(:hover):not([focused=true]) .searchbar-search-button { 
     width: 0px !important;
 	opacity: 0;
 	margin-left: -20px !important;
     transition: var(--unhover-animation), width 0s;
 } 
+
+.searchbar-textbox:hover .searchbar-search-button { 
+    transition: var(--hover-animation), width 0s;
+} 
+
+
 
 .searchbar-textbox[focused=true] .searchbar-search-button {
     transition: var(--hover-animation), width 0s;
@@ -458,7 +455,7 @@ textbox:not(:hover):not(.searchbar-textbox) {
     transition: var(--hover-animation);
 }
 
-textbox[focused=true]:not(#urlbar), .searchbar-textbox:hover {
+textbox[focused=true]:not(#urlbar) {
     background-color: rgba(130, 130, 130, 0.2) !important;
     opacity: calc(var(--unhover-opacity)*1.1667) !important;
 	transition: var(--hover-animation);
@@ -491,6 +488,10 @@ textbox[focused=true]:not(#urlbar), .searchbar-textbox:hover {
   display: none !important;
 } 
 
+#identity-box > #extension-icon {
+	display: none !important;
+}
+
 
 /* ------------------------------7------------------------------------ */
 
@@ -498,9 +499,14 @@ textbox[focused=true]:not(#urlbar), .searchbar-textbox:hover {
  *  B O R D E R ( L E S S )   S T Y L I N G
  */
  
- .panel-subview-footer {
-	 border: none !important;
- }
+.popup-internal-box /* #contentAreaContextMenu  .arrowscrollbox-scrollbox  */ {
+	background-color: white !important;
+	box-shadow: none !important;
+}
+
+#context-navigation {
+	display: none !important;
+}
  
 .chromeclass-extrachrome {
 	 border: none !important;
@@ -522,9 +528,9 @@ box {
 	transition: var(--hover-animation);
 }
 
-.panel-arrow {
-  padding-bottom: 1px;
-} 
+.panel-arrowbox {
+	display: none !important;
+}
 
 .panel-subview-body, .tree-body {
 	scrollbar-width: none !important;
