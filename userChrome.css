@@ -7,6 +7,7 @@
 .tabbrowser-tab:last-child::after {
   display: none !important;
 }
+
 /* ^^^^^ REMOVE THIS TO MAKE THE LAST TAB DIVIDER VISIBLE ^^^^^^^^ */
 
 
@@ -49,7 +50,7 @@
 	--hover-animation: 0.2s;
 	--unhover-animation: 0.3s;
 	--animation-type: linear;
-	--active-animation: 0.2s linear;
+	--active-animation: 0.2s;
 }
 
 /* ---------------------------Tab styling   
@@ -66,6 +67,8 @@
 #tabbrowser-tabs:not([movingtab]) > .tabbrowser-tab[before-multiselected]::after { 
   visibility: hidden !important;
 }
+
+
 
 #tabbrowser-tabs:not([movingtab]) > .tabbrowser-tab[beforeselected-visible]::after,
 #tabbrowser-tabs[movingtab] > .tabbrowser-tab[visuallyselected]::before,
@@ -99,15 +102,14 @@
   transition: var(--hover-animation) !important; 
 }
 
-.close-icon:active {
+.close-icon:active:not(.tab-close-button) {
   filter: var(--active-filter) !important;
   transition: filter var(--active-animation) !important;
 }
 
-
 .tab-close-button:active {
-  padding: 9px !important;
-  transition: padding 0.2s !important;
+  padding: 10px !important;
+  transition: padding var(--active-animation) !important;
 }
 
 .tabbrowser-tab:not([visuallyselected]):-moz-lwtheme-darktext:hover .tab-background {
@@ -116,13 +118,13 @@
 }
 
 .tabbrowser-tab:not([visuallyselected]):not(:hover) .tab-background {
-  background: none !important;
+  background: inherit !important;
   transition: var(--unhover-animation) !important; 
 }
 
 
 .tabbrowser-tab:not([visuallyselected]):hover .tab-icon-image, .tabbrowser-tab:not([visuallyselected]):hover .tab-label-container {
-	 opacity: var(--hover-opacity);
+  opacity: var(--hover-opacity);
   transition: var(--hover-animation) !important; 
 }
 
@@ -132,32 +134,50 @@
 }
 
 
-.tabbrowser-tab:not(:hover) .close-icon { 
+:root:not([uidensity="touch"]) .tabbrowser-tab:not(:hover) .close-icon { 
+   width: 0 !important;
+   padding: 3px !important;
+   opacity: 0 !important;
+   transition: opacity var(--unhover-animation), width var(--unhover-animation) var(--unhover-animation), padding var(--unhover-animation) var(--unhover-animation) !important; 
+}
+
+.tabbrowser-tab:active .close-icon:not(:active) { 
    width: 0 !important;
    opacity: 0 !important;
-   transition: opacity var(--unhover-animation), width var(--unhover-animation) var(--hover-animation) !important; 
+   transition: opacity var(--hover-animation), width var(--hover-animation) var(--hover-animation) !important; 
 }
+
 
 .tabbrowser-tab:not(:active):hover .close-icon {
   opacity: 1 !important;
   transition: opacity var(--hover-animation), filter var(--hover-animation), width 0s !important; 
 }
 
-.tabbrowser-tab[visuallyselected]:not(:hover) {
+.tabbrowser-tab[visuallyselected]:not(:active) {
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2) !important;
-  transition:  var(--unhover-animation) !important;
 }
 
-.tabbrowser-tab[visuallyselected]:not([pinned]):active {
+.tabbrowser-tab[visuallyselected]:not([pinned]):not(:hover) {
+  transition: var(--unhover-animation) !important;
+}
+
+.tabbrowser-tab[visuallyselected][pinned]:not(:hover) {
+  transition: width 0s box-shadow var(--unhover-animation) !important;
+}
+
+.tabbrowser-tab[visuallyselected]:active {
   box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.15) !important;
   transition: box-shadow var(--active-animation) !important; 
+}
+
+.tabbrowser-tab[visuallyselected]:not(:active):hover {
+  transition: var(--unhover-animation) !important; 
 }
 
 .tabbrowser-arrowscrollbox > .arrowscrollbox-overflow-start-indicator:not([collapsed]),
 .tabbrowser-arrowscrollbox > .arrowscrollbox-overflow-end-indicator:not([collapsed]) {
   background-image: none !important;
 }
-
 
 /* -------------------------------2----------------------------------------------------------------------- */ 
 
@@ -242,7 +262,12 @@ remove this and the top one for activation ---- > */
 /* -----------------------default state */
 
 
-.toolbarbutton-icon, #PersonalToolbar .toolbarbutton-1, .findbar-container toolbarbutton, #downloads-button, .subviewbutton-back {
+.toolbarbutton-icon, 
+#PersonalToolbar .toolbarbutton-1, 
+.findbar-container toolbarbutton, 
+#downloads-button, 
+.subviewbutton-back, 
+.toolbarbutton-badge-stack  {
   background: unset !important;
   box-shadow: unset !important;
   border: unset !important;
@@ -284,22 +309,35 @@ toolbarbutton:not([disabled]):active, toolbarbutton:not([disabled]):not(.bookmar
 	transition: var(--active-animation) !important;
 }
 
-.urlbar-icon:hover {
-	transition: var(--hover-animation) !important;
+#star-button[starred] {
+	transition: opacity var(--unhover-animation), transform var(--unhover-animation), width 0s !important;
 }
-
-.urlbar-icon:not(:hover) {
-	transition: var(--unhover-animation) !important;
-}
-
-#urlbar:not(:hover) .urlbar-icon:not([starred]), .urlbar-icon:not([starred]):not(:hover) {
+	
+:root:not([uidensity="touch"]) #urlbar:not(:hover):not([focused=true]) #star-button:not([starred]) {
+	width: 0 !important;
+	transform: scale(0) !important;
 	opacity: 0 !important;
-	transition: opacity var(--unhover-animation) !important;
+	transition: opacity var(--unhover-animation), transform var(--unhover-animation), width var(--hover-animation) var(--unhover-animation) !important;
 }
 
-#urlbar:hover:not([focused=true]) .urlbar-icon {
-	opacity: 1 !important;
-	transition: opacity var(--hover-animation) !important;
+#urlbar:not([focused=true]) .urlbar-history-dropmarker {
+	width: 0 !important;
+	transform: scale(0) !important;
+	opacity: 0 !important;
+	transition: none !important;
+}
+
+.urlbar-go-button {
+	display: none !important;
+}
+
+
+#urlbar[focused=true] #star-button {
+	display: none !important;
+}
+
+#urlbar:hover .urlbar-icon {
+	transition: opacity var(--hover-animation), transform var(--hover-animation), width 0s !important;
 }
 
 .bookmark-item:not(.subviewbutton) {
@@ -443,7 +481,7 @@ textbox:not(:hover):not(.searchbar-textbox) {
 }
 
 #urlbar[focused=true]:-moz-lwtheme-darktext {
-    background-color: rgba(255, 255, 255, 0.8) !important;
+    background-color: rgba(255, 255, 255, 1.0) !important;
     opacity: calc(var(--unhover-opacity)*1.1667) !important;
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2) !important;
     transition: var(--hover-animation);
@@ -461,8 +499,6 @@ textbox[focused=true]:not(#urlbar) {
 	transition: var(--hover-animation);
 }
 
-
-
 /* -----------------------------6------------------------------------- */
     
 
@@ -471,26 +507,42 @@ textbox[focused=true]:not(#urlbar) {
  */
 
 #identity-box {
-	transition: 0.2s ease-out !important;
+	transition: background var(--hover-animation) !important;
 }
 
-#identity-icon {
-	opacity: 0 !important;
-	margin-right: -20px !important;
+#urlbar[pageproxystate="valid"] > #identity-box.verifiedDomain > #identity-icon, 
+#urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity > #identity-icon, 
+#urlbar[pageproxystate="valid"] > #identity-box.mixedActiveBlocked > #identity-icon {
+	    list-style-image: url(chrome://browser/skin/connection-secure.svg) !important;
+        fill: #12BC00;
 }
 
-#identity-box:not(:hover) {
-  padding-inline-end: 0px !important;
-  transition: 0.2s ease-out;
+#urlbar[pageproxystate="valid"] > #identity-box.weakCipher > #identity-icon, 
+#urlbar[pageproxystate="valid"] > #identity-box.mixedDisplayContent > #identity-icon, 
+#urlbar[pageproxystate="valid"] > #identity-box.mixedDisplayContentLoadedActiveBlocked > #identity-icon, 
+#urlbar[pageproxystate="valid"] > #identity-box.certUserOverridden > #identity-icon {
+	list-style-image: url(chrome://browser/skin/connection-mixed-passive-loaded.svg) !important;
+    fill: unset;
+    -moz-context-properties: fill, fill-opacity;
 }
 
-#identity-box:not(:hover) #identity-icon-labels, #identity-box:not(:hover) #identity-icon-country-label {
+#urlbar[pageproxystate="valid"] > #identity-box.notSecure > #identity-icon,
+#urlbar[pageproxystate="valid"] > #identity-box.insecureLoginForms > #identity-icon,
+#urlbar[pageproxystate="valid"] > #identity-box.mixedActiveContent > #identity-icon {
+  list-style-image: url(chrome://browser/skin/connection-mixed-active-loaded.svg) !important;
+}
+
+#urlbar[pageproxystate="valid"] > #identity-box.extensionPage > #identity-icon {
+  opacity: 0 !important;
+  margin-right: -30px !important;
+}
+
+#connection-icon, #identity-icon-labels, 
+#identity-icon-country-label, 
+#identity-box > #extension-icon {
   display: none !important;
 } 
 
-#identity-box > #extension-icon {
-	display: none !important;
-}
 
 
 /* ------------------------------7------------------------------------ */
