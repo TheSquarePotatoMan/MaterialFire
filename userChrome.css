@@ -4,16 +4,25 @@
     -moz-binding: url(data:text/xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+CjwhLS0gQ29weXJpZ2h0IChjKSAyMDE3IEhhZ2dhaSBOdWNoaQpBdmFpbGFibGUgZm9yIHVzZSB1bmRlciB0aGUgTUlUIExpY2Vuc2U6Cmh0dHBzOi8vb3BlbnNvdXJjZS5vcmcvbGljZW5zZXMvTUlUCiAtLT4KCjwhLS0gUnVuIHVzZXJDaHJvbWUuanMvdXNlckNocm9tZS54dWwgYW5kIC51Yy5qcy8udWMueHVsLy5jc3MgZmlsZXMgIC0tPgo8YmluZGluZ3MgeG1sbnM9Imh0dHA6Ly93d3cubW96aWxsYS5vcmcveGJsIj4KICAgIDxiaW5kaW5nIGlkPSJqcyIgZXh0ZW5kcz0iY2hyb21lOi8vZ2xvYmFsL2NvbnRlbnQvYmluZGluZ3MvdG9vbGJhcmJ1dHRvbi54bWwjbWVudSI+CiAgICAgICAgPGltcGxlbWVudGF0aW9uPgogICAgICAgICAgICA8Y29uc3RydWN0b3I+PCFbQ0RBVEFbCiAgICAgICAgICAgICAgICBpZih3aW5kb3cudXNlckNocm9tZUpzTW9kKSByZXR1cm47CiAgICAgICAgICAgICAgICB3aW5kb3cudXNlckNocm9tZUpzTW9kID0gdHJ1ZTsKICAgICAgICAgICAgICAgIHZhciBjaHJvbWVGaWxlcyA9IEZpbGVVdGlscy5nZXREaXIoIlVDaHJtIiwgW10pLmRpcmVjdG9yeUVudHJpZXM7CiAgICAgICAgICAgICAgICB2YXIgeHVsRmlsZXMgPSBbXTsKICAgICAgICAgICAgICAgIHZhciBzc3MgPSBDY1snQG1vemlsbGEub3JnL2NvbnRlbnQvc3R5bGUtc2hlZXQtc2VydmljZTsxJ10uZ2V0U2VydmljZShDaS5uc0lTdHlsZVNoZWV0U2VydmljZSk7CiAgICAgICAgICAgICAgICB3aGlsZShjaHJvbWVGaWxlcy5oYXNNb3JlRWxlbWVudHMoKSkgewogICAgICAgICAgICAgICAgICAgIHZhciBmaWxlID0gY2hyb21lRmlsZXMuZ2V0TmV4dCgpLlF1ZXJ5SW50ZXJmYWNlKENpLm5zSUZpbGUpOwogICAgICAgICAgICAgICAgICAgIHZhciBmaWxlVVJJID0gU2VydmljZXMuaW8ubmV3RmlsZVVSSShmaWxlKTsKICAgICAgICAgICAgICAgICAgICBpZihmaWxlLmlzRmlsZSgpKSB7CiAgICAgICAgICAgICAgICAgICAgICAgIHR5cGUgPSAibm9uZSI7CiAgICAgICAgICAgICAgICAgICAgICAgIGlmKC8oXnVzZXJDaHJvbWV8XC51YylcLmpzJC9pLnRlc3QoZmlsZS5sZWFmTmFtZSkpIHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHR5cGUgPSAidXNlcmNocm9tZS9qcyI7CiAgICAgICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgICAgICAgICAgZWxzZSBpZigvKF51c2VyQ2hyb21lfFwudWMpXC54dWwkL2kudGVzdChmaWxlLmxlYWZOYW1lKSkgewogICAgICAgICAgICAgICAgICAgICAgICAgICAgdHlwZSA9ICJ1c2VyY2hyb21lL3h1bCI7CiAgICAgICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgICAgICAgICAgZWxzZSBpZigvXC5hc1wuY3NzJC9pLnRlc3QoZmlsZS5sZWFmTmFtZSkpIHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHR5cGUgPSAiYWdlbnRzaGVldCI7CiAgICAgICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgICAgICAgICAgZWxzZSBpZigvXig/ISh1c2VyQ2hyb21lfHVzZXJDb250ZW50KVwuY3NzJCkuK1wuY3NzJC9pLnRlc3QoZmlsZS5sZWFmTmFtZSkpIHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHR5cGUgPSAidXNlcnNoZWV0IjsKICAgICAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgICAgICBpZih0eXBlICE9ICJub25lIikgewogICAgICAgICAgICAgICAgICAgICAgICAgICAgY29uc29sZS5sb2coIi0tLS0tLS0tLS1cXCAiICsgZmlsZS5sZWFmTmFtZSArICIgKCIgKyB0eXBlICsgIikiKTsKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHRyeSB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgaWYodHlwZSA9PSAidXNlcmNocm9tZS9qcyIpIHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgU2VydmljZXMuc2NyaXB0bG9hZGVyLmxvYWRTdWJTY3JpcHRXaXRoT3B0aW9ucyhmaWxlVVJJLnNwZWMsIHt0YXJnZXQ6IHdpbmRvdywgaWdub3JlQ2FjaGU6IHRydWV9KTsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgZWxzZSBpZih0eXBlID09ICJ1c2VyY2hyb21lL3h1bCIpIHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgeHVsRmlsZXMucHVzaChmaWxlVVJJLnNwZWMpOwogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBlbHNlIGlmKHR5cGUgPT0gImFnZW50c2hlZXQiKSB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGlmKCFzc3Muc2hlZXRSZWdpc3RlcmVkKGZpbGVVUkksIHNzcy5BR0VOVF9TSEVFVCkpCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBzc3MubG9hZEFuZFJlZ2lzdGVyU2hlZXQoZmlsZVVSSSwgc3NzLkFHRU5UX1NIRUVUKTsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgZWxzZSBpZih0eXBlID09ICJ1c2Vyc2hlZXQiKSB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGlmKCFzc3Muc2hlZXRSZWdpc3RlcmVkKGZpbGVVUkksIHNzcy5VU0VSX1NIRUVUKSkKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHNzcy5sb2FkQW5kUmVnaXN0ZXJTaGVldChmaWxlVVJJLCBzc3MuVVNFUl9TSEVFVCk7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgICAgICAgICAgfSBjYXRjaChlKSB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY29uc29sZS5sb2coIiMjIyMjIyMjIyMgRVJST1I6ICIgKyBlICsgIiBhdCAiICsgZS5saW5lTnVtYmVyICsgIjoiICsgZS5jb2x1bW5OdW1iZXIpOwogICAgICAgICAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgICAgICAgICAgY29uc29sZS5sb2coIi0tLS0tLS0tLS0vICIgKyBmaWxlLmxlYWZOYW1lKTsKICAgICAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gbG9hZFhVTCgpIHsKICAgICAgICAgICAgICAgICAgICBpZih4dWxGaWxlcy5sZW5ndGggPiAwKSB7CiAgICAgICAgICAgICAgICAgICAgICAgIGRvY3VtZW50LmxvYWRPdmVybGF5KHh1bEZpbGVzLnNoaWZ0KCksIG51bGwpOwogICAgICAgICAgICAgICAgICAgICAgICBzZXRUaW1lb3V0KGxvYWRYVUwsIDUpOwogICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIH0sIDApOwogICAgICAgICAgICBdXT48L2NvbnN0cnVjdG9yPgogICAgICAgIDwvaW1wbGVtZW50YXRpb24+CiAgICA8L2JpbmRpbmc+CjwvYmluZGluZ3M+Cg==);
 }
 
+/* vvvvvv REMOVE THIS TO MAKE THE LAST TAB DIVIDER VISIBLE vvvvvvvvvvv */
+
 .tabbrowser-tab:last-child::after {
   display: none !important;
 }
 
 /* ^^^^^ REMOVE THIS TO MAKE THE LAST TAB DIVIDER VISIBLE ^^^^^^^^ */
 
+.titlebar-spacer[type="pre-tabs"] { 
+    display: none !important;
+}
 
-#back-button {
+:root[uidensity=compact] #back-button {
 	list-style-image: url(chrome://browser/skin/arrow-left.svg) !important;
-	transform: rotate(360deg) scale(1.2) !important;
+	transform: scale(1.2) !important;
+}
+
+:root:not([uidensity=compact]) #back-button {
+	transform: scale(1.07) !important;
 }
 
 #forward-button {
@@ -22,40 +31,43 @@
 	margin-left: -5px !important;
 }
 
-:root:not([customizing]) #forward-button[disabled]:not(:active), :root:not([customizing]) #back-button[disabled]:not(:active) {
-	margin-right: -24px !important;
+:root:not([customizing]) #back-button[disabled]:not(:active) {
+	margin-left: -24px !important;
 	opacity: 0 !important;
-	transform: scale(0) !important;
-	transition: margin 0.5s, opacity 0.2s, transform 0s 0.6s !important;
+	transition: margin-left var(--unhover-animation) 0.12s, opacity var(--hover-animation) 0.1s !important;
 }
 
-:root:not([uidensity=compact]) #back-button {
-	transform: scale(1.07) !important;
+:root:not([customizing]) #forward-button[disabled]:not(:active) {
+	transform: scale(0) !important;
+	margin-right: -24px !important;
+	opacity: 0 !important;
+	transition: transform 0s calc(var(--unhover-animation) + 0.12s), margin-right var(--unhover-animation) 0.12s, opacity var(--hover-animation) 0.1s !important;
+} 
+
+:root:not([customizing]) #forward-button[disabled]:active, 
+:root:not([customizing]) #back-button[disabled]:active {
+	transition: none !important;
 }
+
+#back-button:not([disabled]) {
+	transition: margin-left var(--unhover-animation) 0.12s, opacity var(--active-animation) 0.12s !important;
+}
+
+#forward-button:not([disabled]) {
+	transition: margin-right var(--unhover-animation) 0.12s, opacity calc(var(--hover-animation) + 0.1s) 0.12s, transform 0s !important;
+}
+	
+
 /*-------^^^^^^^^^^^^^^^^^^^^^^^REMOVE THIS FOR OLD NAV BUTTONS^^^^^^^^^^^^^^^^^^^^^^^^^^^-------------------*/ 
 
 /* ------------------------------1--V A R I A B L E S---------------------------------------------------------- */
 
-:root {
-	--default-color: rgba(130, 130, 130, 1.0);
-	--blue-color: rgba(80, 150, 220, 1); 
-	--red-color: rgba(229, 76, 45, 1);
-	--disabled-active-color: rgba(229, 76, 45, 1.0);
-	--active-filter: brightness(70%);
-	--unhover-opacity: 0.65;
-	--disabled-opacity: 0.5;
-    --shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-	--bottom-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
-	--top-shadow: 0px -2px 2px rgba(0, 0, 0, 0.1);
-	--hover-animation: 0.2s;
-	--unhover-animation: 0.3s;
-	--animation-type: linear;
-	--active-animation: 0.2s;
-}
+
 
 /* ---------------------------Tab styling   
                                                        */ 
-.tabbrowser-tab::after, .tabbrowser-tab::before {
+.tabbrowser-tab::after, 
+.tabbrowser-tab::before {
   margin-top: 9px !important;
   margin-bottom: 9px !important;
   opacity: 0.3 !important;
@@ -82,7 +94,8 @@
 	display: inline block !important;
 }
 
-.close-icon .toolbarbutton-icon, .tab-close-button {
+.close-icon .toolbarbutton-icon, 
+.tab-close-button {
    width: 22px !important;
    height: 22px !important;
    padding: 6px !important;
@@ -108,8 +121,8 @@
 }
 
 .tab-close-button:active {
-  padding: 10px !important;
-  transition: padding var(--active-animation) !important;
+  padding: 8px !important;
+  transition: padding calc(var(--active-animation)*1.5) !important;
 }
 
 .tabbrowser-tab:not([visuallyselected]):-moz-lwtheme-darktext:hover .tab-background {
@@ -123,12 +136,14 @@
 }
 
 
-.tabbrowser-tab:not([visuallyselected]):hover .tab-icon-image, .tabbrowser-tab:not([visuallyselected]):hover .tab-label-container {
+.tabbrowser-tab:not([visuallyselected]):hover .tab-icon-image, 
+.tabbrowser-tab:not([visuallyselected]):hover .tab-label-container {
   opacity: var(--hover-opacity);
   transition: var(--hover-animation) !important; 
 }
 
-.tabbrowser-tab:not([visuallyselected]):not(:hover) .tab-icon-image, .tabbrowser-tab:not([visuallyselected]):not(:hover) .tab-label-container {
+.tabbrowser-tab:not([visuallyselected]):not(:hover) .tab-icon-image, 
+.tabbrowser-tab:not([visuallyselected]):not(:hover) .tab-label-container {
   opacity: var(--unhover-opacity);
   transition: var(--unhover-animation) !important; 
 }
@@ -182,7 +197,8 @@
 /* -------------------------------2----------------------------------------------------------------------- */ 
 
 
- /* ------------------------ overflow button styling                                                    */
+ /* ------------------------ overflow button styling
+ (replace "#nav-bar-overflow-button" with "#PanelUI-menu-button" to have the actual menu button styled instead)                                                  */
 
 #nav-bar-overflow-button > .toolbarbutton-icon { 
   list-style-image: url("material/menubutton.svg") !important;
@@ -196,58 +212,17 @@
   padding: 10px !important;
 }
 
-#nav-bar-overflow-button:not(:hover) > .toolbarbutton-icon { 
+#nav-bar-overflow-button:not([open=true]):not(:hover) > .toolbarbutton-icon { 
   filter: grayscale(100%) !important;
   opacity: calc(var(--unhover-opacity) * 133%) !important;
   transition: var(--unhover-animation) !important;
 }
 
-#nav-bar-overflow-button:not(:active):hover > .toolbarbutton-icon { 
+#nav-bar-overflow-button:hover > .toolbarbutton-icon { 
   filter: grayscale(0%) !important;
   opacity: 1.0 !important;
   transition: var(--hover-animation) !important;
 }
-
-#nav-bar-overflow-button:active > .toolbarbutton-icon { 
-  filter: var(--active-filter) !important;
-  transition: var(--active-animation) !important;
-}
-
-
-/* OPTIONAL: delete above(up until the '2' page divider) 
- * and add code below to style the menu button instead---------------------------------------------------------- 
- */
-
-
-/* ------------------------ menu button styling                                                    */
-
-/* < ----- remove this and the bottom one for activation 
-
-#PanelUI-menu-button .toolbarbutton-icon { 
-background: none !important;
-list-style-image: url("material/menubutton.svg") !important;
-  transform: scale(0.85);
-  
-}
-
-#PanelUI-menu-button:not(:hover) .toolbarbutton-icon { 
-  filter: grayscale(100%);
-  opacity: 0.8;
-  transition: 0.2s linear !important;
-}
-
-#PanelUI-menu-button:hover .toolbarbutton-icon { 
-  filter: grayscale(0%);
-  opacity: 1.0;
-  transition: 0.1s ease-in !important;
-}
-
-#PanelUI-menu-button:active .toolbarbutton-icon { 
-  filter: brightness(75%);
-}
-
-
-remove this and the top one for activation ---- > */ 
 
 
 
@@ -265,7 +240,6 @@ remove this and the top one for activation ---- > */
 .toolbarbutton-icon, 
 #PersonalToolbar .toolbarbutton-1, 
 .findbar-container toolbarbutton, 
-#downloads-button, 
 .subviewbutton-back, 
 .toolbarbutton-badge-stack  {
   background: unset !important;
@@ -275,38 +249,48 @@ remove this and the top one for activation ---- > */
              
 /* ----------------------disabled state */
 
-toolbarbutton[disabled] {
-    transition: var(--unhover-animation) !important;
+toolbarbutton[disabled]:hover:not(:active) {
+    transition: fill var(--unhover-animation), opacity var(--unhover-animation) !important;
 }
 
 toolbarbutton[disabled]:active > .toolbarbutton-icon {
     opacity: 1.0 !important;
     fill: var(--disabled-active-color) !important;
-    transition: var(--active-animation) !important;
+    transition: fill var(--active-animation), opacity var(--active-animation) !important;
 }
 
-toolbarbutton[disabled]:not(:active) > .toolbarbutton-icon {
+toolbarbutton[disabled]:not(:hover):not(:active) > .toolbarbutton-icon {
     fill: var(--default-color) !important;
 	opacity: var(--disabled-opacity) !important;
-    transition: 0.8s linear !important;
+    transition: fill calc(var(--unhover-animation)*3), opacity calc(var(--unhover-animation)*3) !important;
 }
 
 /* ----------------------enabled state */
 
-toolbarbutton:not([disabled]):not(:hover), toolbarbutton:not([disabled]):not(:hover) > .toolbarbutton-icon, button:not(:hover) {
+toolbarbutton:not([disabled]):not([open=true]):not(:active):not(:hover), 
+toolbarbutton:not([disabled]):not([open=true]):not(:active):not(:hover) > .toolbarbutton-icon, 
+button:not([open=true]):not(:active):not(:hover) {
     fill: var(--default-color) !important;
-    transition: var(--unhover-animation); 
+    transition: fill var(--unhover-animation); 
 }
 
-toolbarbutton:not([disabled]):not(#stop-button):not(:active):hover, toolbarbutton:not([disabled]):not(#stop-button):not(:active):hover > .toolbarbutton-icon, button:not(:active):hover > .button-icon {
+toolbarbutton:not([disabled]):not([open=true]):not(#stop-button):not(:active):hover, 
+toolbarbutton:not([disabled]):not([open=true]):not(#stop-button):not(:active):hover > .toolbarbutton-icon, 
+button:not(:active):hover > .button-icon {
     fill: var(--blue-color) !important;
-    transition: var(--hover-animation); 
+    transition: fill var(--hover-animation); 
 }
 	
 
-toolbarbutton:not([disabled]):active, toolbarbutton:not([disabled]):not(.bookmark-item):not(.close-icon):not(.tabs-newtab-button):active .toolbarbutton-icon, button:active {
+toolbarbutton:not([disabled]):active, 
+toolbarbutton:not([disabled]):not(.bookmark-item):not(.close-icon):not(.tabs-newtab-button):active .toolbarbutton-icon, 
+button:not([disabled]):active,
+toolbarbutton[open=true]:not([disabled]), 
+toolbarbutton[open=true]:not([disabled]):not(.bookmark-item):not(.close-icon):not(.tabs-newtab-button) .toolbarbutton-icon, 
+button[open=true]:not([disabled]) {
+	fill: var(--blue-color) !important;
     filter: var(--active-filter);
-	transition: var(--active-animation) !important;
+	transition: filter var(--active-animation) !important;
 }
 
 #star-button[starred] {
@@ -345,7 +329,8 @@ toolbarbutton:not([disabled]):active, toolbarbutton:not([disabled]):not(.bookmar
 	border-radius: 2em !important;
 }
 	
-.bookmark-item:not(.subviewbutton):not(:hover), .webextension-browser-action:not(:hover) {
+.bookmark-item:not(.subviewbutton):not(:hover), 
+.webextension-browser-action:not(:hover) {
 	opacity: calc(var(--unhover-opacity)*1.35);
 	transition: var(--unhover-animation) !important;
 }
@@ -354,22 +339,26 @@ toolbarbutton:not([disabled]):active, toolbarbutton:not([disabled]):not(.bookmar
     opacity: var(--unhover-opacity);
 }
 
-.bookmark-item:not(.subviewbutton):not(:active):hover, .webextension-browser-action:not(:active):hover {
-	background-color: rgba(130, 130, 130, 0.12) !important;
+.bookmark-item:not(.subviewbutton):not(:active):hover, 
+.webextension-browser-action:not(:active):hover {
+	background-color: var(--unhover-textboxcolor) !important;
 	opacity: 1 !important;
 }
 
-#widget-overflow-fixed-list .toolbarbutton-1, .subviewbutton:not(.panel-subview-footer) {
+#widget-overflow-fixed-list .toolbarbutton-1, 
+.subviewbutton:not(.panel-subview-footer) {
 	transition:none !important;
 }
 
-#widget-overflow-fixed-list .toolbarbutton-1:not(#zoom-in-button):not(#zoom-out-button):not(.subviewbutton-back):not(:hover) > .toolbarbutton-icon, .subviewbutton:not(.bookmark-item):not(.subviewbutton-back):not(:hover) > .toolbarbutton-icon {
+#widget-overflow-fixed-list .toolbarbutton-1:not(#zoom-in-button):not(#zoom-out-button):not(.subviewbutton-back):not(:hover) > .toolbarbutton-icon, 
+.subviewbutton:not(.bookmark-item):not(.subviewbutton-back):not(:hover) > .toolbarbutton-icon {
 	transform: scale(0);
 	transition: none !important;
 }
 
-#widget-overflow-fixed-list .toolbarbutton-1:hover > .toolbarbutton-icon, .subviewbutton:not(.bookmark-item):hover > .toolbarbutton-icon {
-	transition: 0.1s ease-in !important;
+#widget-overflow-fixed-list .toolbarbutton-1:hover > .toolbarbutton-icon, 
+.subviewbutton:not(.bookmark-item):hover > .toolbarbutton-icon {
+	transition: var(--hover-animation) !important;
 }
 
 
@@ -387,26 +376,31 @@ toolbarbutton:not([disabled]):active, toolbarbutton:not([disabled]):not(.bookmar
 /* ----------------------new tab button styling (has new icon)  */
 
 
-.tabs-newtab-button > .toolbarbutton-icon, #new-tab-button > .toolbarbutton-icon { 
+.tabs-newtab-button > .toolbarbutton-icon, 
+#new-tab-button > .toolbarbutton-icon { 
   background: none !important;
   list-style-image: url("material/add.svg") !important;
 }
 
-:root:not([uidensity="touch"]) .tabs-newtab-button:not(:active) > .toolbarbutton-icon, :root:not([uidensity="touch"]) #new-tab-button:not(:active) > .toolbarbutton-icon { 
+:root:not([uidensity="touch"]) .tabs-newtab-button:not(:active) > .toolbarbutton-icon, 
+:root:not([uidensity="touch"]) #new-tab-button:not(:active) > .toolbarbutton-icon { 
   padding: 8px !important;
 }
 
-:root[uidensity="touch"] .tabs-newtab-button:not(:active) > .toolbarbutton-icon, :root[uidensity="touch"] #new-tab-button:not(:active) > .toolbarbutton-icon { 
+:root[uidensity="touch"] .tabs-newtab-button:not(:active) > .toolbarbutton-icon, 
+:root[uidensity="touch"] #new-tab-button:not(:active) > .toolbarbutton-icon { 
   padding: 11px !important;
 }
 
-.tabs-newtab-button:not(:hover):not(:active), #new-tab-button:not(:hover):not(:active) > .toolbarbutton-icon  {
+.tabs-newtab-button:not(:hover):not(:active), 
+#new-tab-button:not(:hover):not(:active) > .toolbarbutton-icon  {
   filter: opacity(var(--unhover-opacity)) grayscale(100%) !important;
 }
 
-.tabs-newtab-button:active > .toolbarbutton-icon, #new-tab-button:active > .toolbarbutton-icon  {
+.tabs-newtab-button:active > .toolbarbutton-icon, 
+#new-tab-button:active > .toolbarbutton-icon  {
   padding: 6px !important;
-  transition: padding 0.2s !important;
+  transition: padding var(--active-animation) !important;
 }
 
 /* -------------------------------4----------------------------------- */
@@ -428,28 +422,51 @@ toolbarbutton:not([disabled]):active, toolbarbutton:not([disabled]):not(.bookmar
 /* 
  * textbox styling 
  */
-
-textbox:not(.searchbar-textbox), #urlbar, #search-box {
-    border: 0 !important;
-    border-radius: 2em !important;
-    box-shadow: none !important;
-    background-color: unset;
-}
-
-.searchbar-textbox {
-    background-color: rgba(130, 130, 130, 0.12) !important;
-    opacity: calc(var(--unhover-opacity)*1.1667);
+ 
+textbox {
 	border: 0 !important;
     border-radius: 2em !important;
+}
+	
+textbox:not([focused=true]) {
     box-shadow: none !important;
 }
 
-textbox:not(.searchbar-textbox):hover {
-    background-color: rgba(130, 130, 130, 0.12) !important;
+#urlbar {
+	background-color: unset;
+}
+
+textbox:not(#urlbar):not([focused=true]):hover {
+    background-color: var(--hover-textboxcolor) !important;
+    opacity: calc(var(--unhover-opacity)*1.1667);
+}
+
+#urlbar:hover:not([focused=true]),
+textbox:not(#urlbar):not(:hover):not([focused=true]) {
+    background-color: var(--unhover-textboxcolor) !important;
     opacity: calc(var(--unhover-opacity)*1.1667);
     transition: var(--hover-animation);
 }
 
+
+#urlbar:not(:hover):not([focused=true]) {
+    background-color: transparent !important;
+    opacity: calc(var(--unhover-opacity)*1.1667);
+    transition: var(--unhover-animation);
+}
+
+textbox[focused=true]:-moz-lwtheme-darktext {
+    background-color: white !important;
+    opacity: calc(var(--unhover-opacity)*1.1667) !important;
+    box-shadow: var(--bottom-shadow) !important;
+    transition: var(--hover-animation);
+}
+
+textbox[focused=true]:-moz-lwtheme-brighttext {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    opacity: calc(var(--unhover-opacity)*1.1667) !important;
+    transition: var(--hover-animation);
+}
 
 .searchbar-textbox {
 	text-align: left !important;
@@ -471,32 +488,6 @@ textbox:not(.searchbar-textbox):hover {
 
 .searchbar-textbox[focused=true] .searchbar-search-button {
     transition: var(--hover-animation), width 0s;
-}
-
-
-textbox:not(:hover):not(.searchbar-textbox) {
-    background-color: transparent !important;
-    opacity: calc(var(--unhover-opacity)*1.1667);
-    transition: var(--unhover-animation);
-}
-
-#urlbar[focused=true]:-moz-lwtheme-darktext {
-    background-color: rgba(255, 255, 255, 1.0) !important;
-    opacity: calc(var(--unhover-opacity)*1.1667) !important;
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2) !important;
-    transition: var(--hover-animation);
-}
-
-#urlbar[focused=true]:-moz-lwtheme-brighttext {
-    background-color: rgba(255, 255, 255, 0.1) !important;
-    opacity: calc(var(--unhover-opacity)*1.1667) !important;
-    transition: var(--hover-animation);
-}
-
-textbox[focused=true]:not(#urlbar) {
-    background-color: rgba(130, 130, 130, 0.2) !important;
-    opacity: calc(var(--unhover-opacity)*1.1667) !important;
-	transition: var(--hover-animation);
 }
 
 /* -----------------------------6------------------------------------- */
@@ -551,9 +542,13 @@ textbox[focused=true]:not(#urlbar) {
  *  B O R D E R ( L E S S )   S T Y L I N G
  */
  
+ 
+.panel-subview-footer {
+	border: none !important;
+}
+ 
 .popup-internal-box /* #contentAreaContextMenu  .arrowscrollbox-scrollbox  */ {
-	background-color: white !important;
-	box-shadow: none !important;
+	border: none !important;
 }
 
 #context-navigation {
@@ -584,7 +579,8 @@ box {
 	display: none !important;
 }
 
-.panel-subview-body, .tree-body {
+.panel-subview-body, 
+.tree-body {
 	scrollbar-width: none !important;
 }
 
@@ -594,7 +590,7 @@ box {
 }
 
 #sidebar-splitter {
-	box-shadow: 3px 0px 4px rgba(0, 0, 0, 0.1) !important;
+	opacity: 0 !important;
 }
 
 #sidebar-header {
@@ -639,12 +635,12 @@ findbar {
 }
 
 .findbar-button:hover {
-    background-color: rgba(130, 130, 130, 0.12) !important;
+    background-color: var(--unhover-textboxcolor) !important;
     transition: var(--hover-animation) !important;
 }
 
 .findbar-button:active {
-    background-color: rgba(130, 130, 130, 0.2) !important;
+    background-color: var(--hover-textboxcolor) !important;
 }
 
 
@@ -659,11 +655,12 @@ findbar {
    transform-origin: left;
 }
 
-.findbar-find-previous, .findbar-find-next {
+.findbar-find-previous, 
+.findbar-find-next {
   display: inline-block !important;
   position: relative !important;
 }
 
-.findbar-find-previous{
+.findbar-find-previous {
   margin-left: 40px !important;
 }

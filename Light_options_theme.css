@@ -1,0 +1,100 @@
+:root textbox {
+    border: 0px !important;
+	background-color: var(--unhover-textboxcolor) !important;
+    border-radius: 2em !important;
+	transition: var(--unhover-animation) !important;
+}
+
+:root textbox:hover {
+    border: 0px !important;
+	background-color: var(--hover-textboxcolor) !important;
+    border-radius: 2em !important;
+	transition: var(--hover-animation) !important;
+}
+
+:root textbox[focused=true] {
+	border: none !important;
+	background-color: white !important;
+    box-shadow: var(--bottom-shadow) !important;
+	transition: var(--hover-animation) !important;
+}
+
+:root .checkbox-check, .radio-check {
+	border: none !important;
+	border-radius: 2em !important;
+}
+
+:root .checkbox-check {
+	transform: scale(0.9);
+	box-shadow: var(--shadow) !important;
+	transition: var(--unhover-animation) !important;
+}
+
+:root .radio-check:not([selected]) {
+	box-shadow: var(--inshadow) !important;
+	transform: scale(0.8);
+	transition: transform var(--unhover-animation), box-shadow var(--unhover-animation) !important;
+}
+
+:root .checkbox-check[checked=true], .radio-check[selected] {
+	background-color: var(--blue-color) !important;
+	list-style-image: none !important;
+	box-shadow: none !important;
+}
+
+:root .checkbox-check[checked=true] {
+	transform: scale(1) !important;
+	transition: var(--active-animation) !important;
+}
+
+:root .radio-check[selected] {
+	transform: scale(0.4) !important;
+	transition: var(--active-animation) !important;
+}
+
+
+:root .category, .text-link {
+	border-radius: 0 !important;
+	transition: none !important;
+}
+
+:root .category .category-icon, .text-link .sidebar-footer-icon {
+	fill: var(--blue-color) !important;
+	transition: transform var(--hover-animation) !important;
+}
+
+:root .category:not([current=true]) .category-icon, .text-link:not(:hover) .sidebar-footer-icon {
+	transform: scale(0) !important;
+	transition: none !important;
+}
+
+:root .category[current=true] .category-name {
+	color: var(--blue-color) !important;
+	font-weight: bold !important;
+}
+
+button, menulist {
+	transition: var(--unhover-animation) !important;
+}
+
+tree {
+	border: none !important;
+	box-shadow: var(--shadow) !important;
+}
+
+treecols {
+	border: none !important;
+}
+
+listheader, richlistbox {
+	border: none !important;
+}
+
+listheader {
+	padding-bottom: 0px !important;
+}
+
+.content-blocking-category {
+	border: none !important;
+	box-shadow: var(--shadow) !important;
+}
