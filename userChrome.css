@@ -328,6 +328,10 @@ button[open=true]:not([disabled]) {
 	padding: 4px !important;
 	border-radius: 2em !important;
 }
+
+.bookmark-item:not(.subviewbutton):active {
+	transition: var(--active-animation) !important;
+}
 	
 .bookmark-item:not(.subviewbutton):not(:hover), 
 .webextension-browser-action:not(:hover) {
