@@ -1,19 +1,55 @@
+/*you can use this to change settings to your liking */
+
 :root {
-	--line-above-tab: none;
-	--default-color: rgba(130, 130, 130, 1.0);
-	--theme-color: red; 
-	--red-color: rgba(229, 76, 45, 1);
-	--disabled-active-color: rgba(229, 76, 45, 1.0);
-	--active-filter: 80%;
-	--unhover-opacity: 0.65;
-	--disabled-opacity: 0.5;
-    --shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+	
+	/* :::::::::::::::::::::::::: button and icon colors :::::::::::::::::::::::::::: */
+	
+	/* type prefered colors for buttons, icons and search boxes or add custom rgba/hex code */
+	
+	--theme-color: rgba(34, 146, 208, 1); 		
+
+	--default-color: rgba(130, 130, 130, 1.0);              							
+	
+	--red-color: rgba(229, 76, 45, 1);						
+	
+	--disabled-active-color: rgba(229, 76, 45, 1.0);	  
+	
+	--hover-textboxcolor: rgba(130, 130, 130, 0.2);			
+	
+	--unhover-textboxcolor: rgba(130, 130, 130, 0.12);
+	
+	
+	/* :::::::::::::::::::::::::: animation speed :::::::::::::::::::::::::::: */
+	
+	 /* You only need to change the first one to change all animation speeds because the other two will adjust proportionately, 
+	 but you can adjust all of them to your liking */
+
+	--hover-animation: 0.2s;	
+	--unhover-animation: calc(var(--hover-animation)*1.3);
+	--active-animation: calc(var(--hover-animation)*0.8);
+	
+	
+	/* :::::::::::::::::::::::::: colored line above tabs :::::::::::::::::::::::::::: */
+	
+	 /* type 'block' to make tab line visible, type 'none' to remove it */
+	
+	--line-above-tab: none;                               
+	
+	
+	
+	/* :::::::::::::::::::::::::: searchbox and UI shadows :::::::::::::::::::::::::::: */
+			/* the first number is x-offset, the second number is y-offset and the third number is shadow spread */
+			
+    --shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);				
 	--inshadow: inset 0px 1px 3px rgba(0, 0, 0, 0.3);
 	--bottom-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
 	--top-shadow: 0px -2px 2px rgba(0, 0, 0, 0.1);
-	--hover-animation: 0.2s;
-	--unhover-animation: calc(var(--hover-animation)*1.3);
-	--active-animation: calc(var(--hover-animation)*0.8);
-	--hover-textboxcolor: rgba(130, 130, 130, 0.2);
-	--unhover-textboxcolor: rgba(130, 130, 130, 0.12);
+
+	/* :::::::::::::::::::::::::: misc :::::::::::::::::::::::::::: */
+	
+	--active-filter: 80%;									/* type prefered brightness level when pressing a button */
+	
+	--unhover-opacity: 0.65;								/* type prefered default opacity for urlbars, tabs and bookmarks */
+	
+	--disabled-opacity: 0.5;								/* type prefered default opacity for disabled buttons */
 }
