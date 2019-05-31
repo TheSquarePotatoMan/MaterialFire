@@ -1,5 +1,5 @@
 # MaterialFire
-+ A clean and fluid material UI
++ A clean and fluid material UI with autohiding buttons only when practical
 + Edits and adds animations to all tabs, searchbars and buttons 
 + Menu button replaced with overflow button, but still available in the overflow menu with the moveablemenubutton.js file
 
