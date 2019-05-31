@@ -61,13 +61,22 @@ scrollbar {
 	transition: none !important;
 }
 
-#back-button:not([disabled]) {
-	transition: margin-left var(--unhover-animation) 0.12s, opacity var(--active-animation) 0.12s !important;
+#back-button:not([disabled]):hover {
+	transition: margin-left var(--unhover-animation) 0.12s, opacity var(--active-animation) 0.12s, fill var(--hover-animation) !important;
 }
 
-#forward-button:not([disabled]) {
-	transition: margin-right var(--unhover-animation) 0.12s, opacity calc(var(--hover-animation) + 0.1s) 0.12s, transform 0s !important;
+#forward-button:not([disabled]):hover {
+	transition: margin-right var(--unhover-animation) 0.12s, opacity calc(var(--hover-animation) + 0.1s) 0.12s, transform 0s, fill var(--hover-animation) !important;
 }
+
+#back-button:not([disabled]):not(:hover) {
+	transition: margin-left var(--unhover-animation) 0.12s, opacity var(--active-animation) 0.12s, fill var(--unhover-animation) !important;
+}
+
+#forward-button:not([disabled]):not(:hover) {
+	transition: margin-right var(--unhover-animation) 0.12s, opacity calc(var(--hover-animation) + 0.1s) 0.12s, transform 0s, fill var(--unhover-animation) !important;
+}
+	
 	
 
 /*-------^^^^^^^^^^^^^^^^^^^^^^^REMOVE THIS FOR OLD NAV BUTTONS^^^^^^^^^^^^^^^^^^^^^^^^^^^-------------------*/ 
