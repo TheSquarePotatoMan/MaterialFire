@@ -33,11 +33,11 @@
 :root .radio-check:not([selected]) {
 	box-shadow: var(--inshadow) !important;
 	transform: scale(0.8);
-	transition: transform var(--unhover-animation), box-shadow var(--unhover-animation) !important;
+	transition: transform var(--hover-animation), box-shadow var(--hover-animation) !important;
 }
 
 :root .checkbox-check[checked=true], .radio-check[selected] {
-	background-color: var(--blue-color) !important;
+	background-color: var(--theme-color) !important;
 	list-style-image: none !important;
 	box-shadow: none !important;
 }
@@ -59,7 +59,7 @@
 }
 
 :root .category .category-icon, .text-link .sidebar-footer-icon {
-	fill: var(--blue-color) !important;
+	fill: var(--theme-color) !important;
 	transition: transform var(--hover-animation) !important;
 }
 
@@ -69,7 +69,7 @@
 }
 
 :root .category[current=true] .category-name {
-	color: var(--blue-color) !important;
+	color: var(--theme-color) !important;
 	font-weight: bold !important;
 }
 
