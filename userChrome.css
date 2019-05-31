@@ -273,7 +273,7 @@ toolbarbutton[open=true]:not([disabled]),
 button[open=true]:not([disabled]),
 button:not([disabled]):active,
 .close-icon:active {
-    filter: var(--active-filter);
+    filter: brightness(var(--active-filter));
 	transition: filter var(--active-animation) !important;
 }
 
@@ -556,6 +556,15 @@ box {
 	border: none !important;
 	box-shadow: var(--bottom-shadow);
 	transition: var(--hover-animation);
+}
+
+#customization-done-button {
+	background-color: var(--theme-color) !important;
+}
+
+
+#customization-done-button:hover:not(:active) {
+	filter: brightness(calc(var(--active-filter)*1.15)) !important;
 }
 
 .panel-arrowbox {
