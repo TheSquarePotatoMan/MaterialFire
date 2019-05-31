@@ -1,6 +1,7 @@
 :root {
+	--line-above-tab: none;
 	--default-color: rgba(130, 130, 130, 1.0);
-	--blue-color: rgba(34, 146, 208, 1); 
+	--theme-color: rgba(34, 146, 208, 1); 
 	--red-color: rgba(229, 76, 45, 1);
 	--disabled-active-color: rgba(229, 76, 45, 1.0);
 	--active-filter: brightness(80%);

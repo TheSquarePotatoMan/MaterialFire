@@ -12,29 +12,41 @@
 
 /* ^^^^^ REMOVE THIS TO MAKE THE LAST TAB DIVIDER VISIBLE ^^^^^^^^ */
 
+scrollbar {
+	scrollbar-width: thin !important;
+}
+
 .titlebar-spacer[type="pre-tabs"] { 
     display: none !important;
 }
 
-:root[uidensity=compact] #back-button {
+:root #back-button {
 	list-style-image: url(chrome://browser/skin/arrow-left.svg) !important;
+}
+
+:root[uidensity=compact] #back-button .toolbarbutton-icon {
 	transform: scale(1.2) !important;
 }
 
-:root:not([uidensity=compact]) #back-button {
+:root:not([uidensity=compact]) #back-button .toolbarbutton-icon {
 	transform: scale(1.07) !important;
 }
 
 #forward-button {
 	list-style-image: url(chrome://browser/skin/arrow-left.svg) !important;
-	transform: rotate(180deg) scale(1.2) !important;
 	margin-left: -5px !important;
 }
 
+
+#forward-button .toolbarbutton-icon {
+	transform: rotate(180deg) scale(1.2) !important;
+}
+
 :root:not([customizing]) #back-button[disabled]:not(:active) {
+	transform: scale(0) !important;
 	margin-left: -24px !important;
 	opacity: 0 !important;
-	transition: margin-left var(--unhover-animation) 0.12s, opacity var(--hover-animation) 0.1s !important;
+	transition: transform 0s calc(var(--unhover-animation) + 0.12s), margin-left var(--unhover-animation) 0.12s, opacity var(--hover-animation) 0.1s !important;
 }
 
 :root:not([customizing]) #forward-button[disabled]:not(:active) {
@@ -66,6 +78,11 @@
 
 /* ---------------------------Tab styling   
                                                        */ 
+
+#tabbrowser-tabs {
+    --tab-loading-fill: var(--theme-color) !important;
+}
+
 .tabbrowser-tab::after, 
 .tabbrowser-tab::before {
   margin-top: 9px !important;
@@ -88,70 +105,28 @@
  visibility: hidden !important;
 }
 
-.close-icon:not([pinned]) {
-    list-style-image: url("material/close.svg") !important;
-    background: none !important;
-	display: inline block !important;
-}
-
-.close-icon .toolbarbutton-icon, 
-.tab-close-button {
-   width: 22px !important;
-   height: 22px !important;
-   padding: 6px !important;
-   position: relative !important;
+.close-icon {
+	display: inline-block !important;
+    fill-opacity: 0 !important;
 }
 
 .tab-close-button {
-   margin-right: -7px !important;
+	height: 19px !important;
+	width: 19px !important;
+    fill-opacity: 0 !important;
 }
 
-.close-icon:not(:hover) {
-  filter: opacity(var(--unhover-opacity)) grayscale(100%) !important;
-  transition: var(--unhover-animation) !important; 
-}
-
-.close-icon:not(:active):hover {
-  transition: var(--hover-animation) !important; 
-}
-
-.close-icon:active:not(.tab-close-button) {
-  filter: var(--active-filter) !important;
-  transition: filter var(--active-animation) !important;
+.tab-close-button {
+   margin-right: -6px !important;
 }
 
 .tab-close-button:active {
-  padding: 8px !important;
-  transition: padding calc(var(--active-animation)*1.5) !important;
+  padding: 4px !important;
 }
 
-.tabbrowser-tab:not([visuallyselected]):-moz-lwtheme-darktext:hover .tab-background {
-    background-color: rgba(255, 255, 255, 0.3) !important;
-	transition: var(--hover-animation) !important;
-}
-
-.tabbrowser-tab:not([visuallyselected]):not(:hover) .tab-background {
-  background: inherit !important;
-  transition: var(--unhover-animation) !important; 
-}
-
-
-.tabbrowser-tab:not([visuallyselected]):hover .tab-icon-image, 
-.tabbrowser-tab:not([visuallyselected]):hover .tab-label-container {
-  opacity: var(--hover-opacity);
-  transition: var(--hover-animation) !important; 
-}
-
-.tabbrowser-tab:not([visuallyselected]):not(:hover) .tab-icon-image, 
-.tabbrowser-tab:not([visuallyselected]):not(:hover) .tab-label-container {
-  opacity: var(--unhover-opacity);
-  transition: var(--unhover-animation) !important; 
-}
-
-
-:root:not([uidensity="touch"]) .tabbrowser-tab:not(:hover) .close-icon { 
+:root:not([uidensity="touch"]) .tabbrowser-tab:not(:hover):not(:active) .close-icon { 
    width: 0 !important;
-   padding: 3px !important;
+   padding: 2px !important;
    opacity: 0 !important;
    transition: opacity var(--unhover-animation), width var(--unhover-animation) var(--unhover-animation), padding var(--unhover-animation) var(--unhover-animation) !important; 
 }
@@ -166,6 +141,28 @@
 .tabbrowser-tab:not(:active):hover .close-icon {
   opacity: 1 !important;
   transition: opacity var(--hover-animation), filter var(--hover-animation), width 0s !important; 
+}
+
+.tabbrowser-tab:not([visuallyselected]):-moz-lwtheme-darktext:hover .tab-background {
+    background-color: rgba(255, 255, 255, 0.3) !important;
+	transition: var(--hover-animation) !important;
+}
+
+.tabbrowser-tab:not([visuallyselected]):not(:hover) .tab-background {
+  transition: var(--unhover-animation) !important; 
+}
+
+
+.tabbrowser-tab:not([visuallyselected]):hover .tab-icon-image, 
+.tabbrowser-tab:not([visuallyselected]):hover .tab-label-container {
+  opacity: var(--hover-opacity);
+  transition: var(--hover-animation) !important; 
+}
+
+.tabbrowser-tab:not([visuallyselected]):not(:hover) .tab-icon-image, 
+.tabbrowser-tab:not([visuallyselected]):not(:hover) .tab-label-container {
+  opacity: var(--unhover-opacity);
+  transition: var(--unhover-animation) !important; 
 }
 
 .tabbrowser-tab[visuallyselected]:not(:active) {
@@ -197,34 +194,21 @@
 /* -------------------------------2----------------------------------------------------------------------- */ 
 
 
- /* ------------------------ overflow button styling
+ /* ------------------------ :::::::::::::::::::: overflow button styling  :::::::::::::::::::::::::::::::
  (replace "#nav-bar-overflow-button" with "#PanelUI-menu-button" to have the actual menu button styled instead)                                                  */
 
 #nav-bar-overflow-button > .toolbarbutton-icon { 
-  list-style-image: url("material/menubutton.svg") !important;
+  list-style-image: url("chrome://devtools/skin/images/more.svg") !important;
+  transform: rotate(90deg) !important;
 }
 
 :root:not([uidensity="touch"]) #nav-bar-overflow-button > .toolbarbutton-icon { 
-  padding: 7.32px !important;
+  padding: 7.3px !important;
 }
 
 :root[uidensity="touch"] #nav-bar-overflow-button > .toolbarbutton-icon { 
   padding: 10px !important;
 }
-
-#nav-bar-overflow-button:not([open=true]):not(:hover) > .toolbarbutton-icon { 
-  filter: grayscale(100%) !important;
-  opacity: calc(var(--unhover-opacity) * 133%) !important;
-  transition: var(--unhover-animation) !important;
-}
-
-#nav-bar-overflow-button:hover > .toolbarbutton-icon { 
-  filter: grayscale(0%) !important;
-  opacity: 1.0 !important;
-  transition: var(--hover-animation) !important;
-}
-
-
 
 /* -------------------------------3---------------------------------------------------------- */
 
@@ -253,13 +237,13 @@ toolbarbutton[disabled]:hover:not(:active) {
     transition: fill var(--unhover-animation), opacity var(--unhover-animation) !important;
 }
 
-toolbarbutton[disabled]:active > .toolbarbutton-icon {
+toolbarbutton[disabled]:active {
     opacity: 1.0 !important;
     fill: var(--disabled-active-color) !important;
     transition: fill var(--active-animation), opacity var(--active-animation) !important;
 }
 
-toolbarbutton[disabled]:not(:hover):not(:active) > .toolbarbutton-icon {
+toolbarbutton[disabled]:not(:active) {
     fill: var(--default-color) !important;
 	opacity: var(--disabled-opacity) !important;
     transition: fill calc(var(--unhover-animation)*3), opacity calc(var(--unhover-animation)*3) !important;
@@ -267,28 +251,28 @@ toolbarbutton[disabled]:not(:hover):not(:active) > .toolbarbutton-icon {
 
 /* ----------------------enabled state */
 
-toolbarbutton:not([disabled]):not([open=true]):not(:active):not(:hover), 
-toolbarbutton:not([disabled]):not([open=true]):not(:active):not(:hover) > .toolbarbutton-icon, 
-button:not([open=true]):not(:active):not(:hover) {
+toolbarbutton:not([disabled]):not([open=true]):not(:active):not(:hover),  
+button:not([disabled]):not([open=true]):not(:active):not(:hover),
+.close-icon:not(:hover) {
     fill: var(--default-color) !important;
     transition: fill var(--unhover-animation); 
 }
 
-toolbarbutton:not([disabled]):not([open=true]):not(#stop-button):not(:active):hover, 
-toolbarbutton:not([disabled]):not([open=true]):not(#stop-button):not(:active):hover > .toolbarbutton-icon, 
-button:not(:active):hover > .button-icon {
-    fill: var(--blue-color) !important;
+toolbarbutton[open=true]:not([disabled]):not(#stop-button):not(.close-icon), 
+toolbarbutton:not([disabled]):not(#stop-button):not(.close-icon):hover, 
+button:hover:not([disabled]) > .button-icon,
+toolbarbutton:not([disabled]):not(#stop-button):not(.close-icon):active, 
+button:not([disabled]):active {
+    fill: var(--theme-color) !important;
     transition: fill var(--hover-animation); 
 }
 	
 
-toolbarbutton:not([disabled]):active, 
-toolbarbutton:not([disabled]):not(.bookmark-item):not(.close-icon):not(.tabs-newtab-button):active .toolbarbutton-icon, 
-button:not([disabled]):active,
+toolbarbutton:not([disabled]):active,  
 toolbarbutton[open=true]:not([disabled]), 
-toolbarbutton[open=true]:not([disabled]):not(.bookmark-item):not(.close-icon):not(.tabs-newtab-button) .toolbarbutton-icon, 
-button[open=true]:not([disabled]) {
-	fill: var(--blue-color) !important;
+button[open=true]:not([disabled]),
+button:not([disabled]):active,
+.close-icon:active {
     filter: var(--active-filter);
 	transition: filter var(--active-animation) !important;
 }
@@ -297,7 +281,7 @@ button[open=true]:not([disabled]) {
 	transition: opacity var(--unhover-animation), transform var(--unhover-animation), width 0s !important;
 }
 	
-:root:not([uidensity="touch"]) #urlbar:not(:hover):not([focused=true]) #star-button:not([starred]) {
+:root:not([uidensity="touch"]) #urlbar:not(:hover):not([focused=true]) .urlbar-icon:not(.urlbar-history-dropmarker) {
 	width: 0 !important;
 	transform: scale(0) !important;
 	opacity: 0 !important;
@@ -311,12 +295,17 @@ button[open=true]:not([disabled]) {
 	transition: none !important;
 }
 
+.urlbar-history-dropmarker {
+	margin-right: -1px !important;
+}
+
+
 .urlbar-go-button {
 	display: none !important;
 }
 
 
-#urlbar[focused=true] #star-button {
+#urlbar[focused=true] .urlbar-icon:not(.urlbar-history-dropmarker) {
 	display: none !important;
 }
 
@@ -347,64 +336,54 @@ button[open=true]:not([disabled]) {
 .webextension-browser-action:not(:active):hover {
 	background-color: var(--unhover-textboxcolor) !important;
 	opacity: 1 !important;
+	transition: var(--hover-animation) !important;
 }
 
-#widget-overflow-fixed-list .toolbarbutton-1, 
+#widget-overflow-fixed-list .toolbarbutton-1:not(:hover), 
 .subviewbutton:not(.panel-subview-footer) {
-	transition:none !important;
+	transition: none !important;
 }
 
 #widget-overflow-fixed-list .toolbarbutton-1:not(#zoom-in-button):not(#zoom-out-button):not(.subviewbutton-back):not(:hover) > .toolbarbutton-icon, 
 .subviewbutton:not(.bookmark-item):not(.subviewbutton-back):not(:hover) > .toolbarbutton-icon {
-	transform: scale(0);
+	fill: var(--default-color) !important;
 	transition: none !important;
+}
+
+#widget-overflow-fixed-list .toolbarbutton-1:not(#zoom-in-button):not(#zoom-out-button):not(.subviewbutton-back):not(:hover) > .toolbarbutton-icon {
+	transform: scale(0);
+}
+
+.subviewbutton:not(.bookmark-item):not(.subviewbutton-back):not(#appMenu-fxa-icon):not(:hover):not(#appMenu-zoomReduce-button):not(#appMenu-zoomEnlarge-button):not(#appMenu-fullscreen-button):not(#appMenu-cut-button):not(#appMenu-copy-button):not(#appMenu-paste-button) > .toolbarbutton-icon {
+	transform: scale(0);
 }
 
 #widget-overflow-fixed-list .toolbarbutton-1:hover > .toolbarbutton-icon, 
 .subviewbutton:not(.bookmark-item):hover > .toolbarbutton-icon {
+	fill: var(--theme-color) !important;
 	transition: var(--hover-animation) !important;
 }
-
-
-
 
 /* ---------------------stopbutton styling(has unique color scheme) */
 
 
-#stop-button:hover:not([disabled]) > .toolbarbutton-icon {
+#stop-button:not([disabled]):hover > .toolbarbutton-icon, .close-icon:hover,
+#stop-button:not([disabled]):active > .toolbarbutton-icon, .close-icon:active {
     fill: var(--red-color) !important;
-    transition: fill var(--hover-animation);
+    transition: fill var(--hover-animation), padding calc(var(--active-animation)*1.5) !important;
 }
 
 
-/* ----------------------new tab button styling (has new icon)  */
+/* ----------------------new tab button styling  */
 
 
-.tabs-newtab-button > .toolbarbutton-icon, 
-#new-tab-button > .toolbarbutton-icon { 
-  background: none !important;
-  list-style-image: url("material/add.svg") !important;
+:root .tabs-newtab-button:not(:active) { 
+  transform: scale(0.8) !important;
 }
 
-:root:not([uidensity="touch"]) .tabs-newtab-button:not(:active) > .toolbarbutton-icon, 
-:root:not([uidensity="touch"]) #new-tab-button:not(:active) > .toolbarbutton-icon { 
-  padding: 8px !important;
-}
-
-:root[uidensity="touch"] .tabs-newtab-button:not(:active) > .toolbarbutton-icon, 
-:root[uidensity="touch"] #new-tab-button:not(:active) > .toolbarbutton-icon { 
-  padding: 11px !important;
-}
-
-.tabs-newtab-button:not(:hover):not(:active), 
-#new-tab-button:not(:hover):not(:active) > .toolbarbutton-icon  {
-  filter: opacity(var(--unhover-opacity)) grayscale(100%) !important;
-}
-
-.tabs-newtab-button:active > .toolbarbutton-icon, 
-#new-tab-button:active > .toolbarbutton-icon  {
-  padding: 6px !important;
-  transition: padding var(--active-animation) !important;
+.tabs-newtab-button:active .toolbarbutton-icon {
+  transform: scale(1.2)  !important;
+  transition: transform var(--active-animation) !important;
 }
 
 /* -------------------------------4----------------------------------- */
@@ -564,8 +543,8 @@ textbox[focused=true]:-moz-lwtheme-brighttext {
 	 box-shadow: var(--shadow) !important;
 }
  
- #main-window:not([customizing]) .tab-line {
-  display: none !important;
+ #main-window .tab-line {
+  display: var(--line-above-tab) !important;
 }
 
 box {
