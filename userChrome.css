@@ -260,10 +260,16 @@ toolbarbutton[disabled]:not(:active) {
 
 /* ----------------------enabled state */
 
+
 toolbarbutton:not([disabled]):not([open=true]):not(:active):not(:hover),  
 button:not([disabled]):not([open=true]):not(:active):not(:hover),
 .close-icon:not(:hover) {
     fill: var(--default-color) !important;
+}
+
+toolbarbutton:not([disabled]):not(#forward-button):not(#back-button):not([open=true]):not(:active):not(:hover),  
+button:not([disabled]):not([open=true]):not(:active):not(:hover),
+.close-icon:not(:hover) {
     transition: fill var(--unhover-animation); 
 }
 
@@ -273,9 +279,16 @@ button:hover:not([disabled]) > .button-icon,
 toolbarbutton:not([disabled]):not(#stop-button):not(.close-icon):active, 
 button:not([disabled]):active {
     fill: var(--theme-color) !important;
+}
+
+toolbarbutton[open=true]:not([disabled]):not(#stop-button):not(.close-icon), 
+toolbarbutton:not([disabled]):not(#forward-button):not(#back-button):not(#stop-button):not(.close-icon):hover, 
+button:hover:not([disabled]) > .button-icon,
+toolbarbutton:not([disabled]):not(#forward-button):not(#back-button):not(#stop-button):not(.close-icon):active, 
+button:not([disabled]):active {
     transition: fill var(--hover-animation); 
 }
-	
+
 
 toolbarbutton:not([disabled]):active,  
 toolbarbutton[open=true]:not([disabled]), 
