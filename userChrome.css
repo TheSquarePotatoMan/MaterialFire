@@ -247,7 +247,7 @@ toolbarbutton[disabled]:hover:not(:active) {
 }
 
 toolbarbutton[disabled]:active {
-    opacity: 1.0 !important;
+    opacity: var(--disabled-opacity) !important;
     fill: var(--disabled-active-color) !important;
     transition: fill var(--active-animation), opacity var(--active-animation) !important;
 }
