@@ -14,6 +14,9 @@ Dark mode
 ![](screenshots/darkmode1.png)
 ![](screenshots/darkmode2.png)
 
+Settings menu
+![](screenshots/settingsmenu.png)
+
 ### How to apply
 + Type 'about:profiles' in the Firefox urlbar and hit enter
 + Open the root directory folder of your profile
