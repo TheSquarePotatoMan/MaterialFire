@@ -10,7 +10,7 @@
 		
 	--adaptive-accent-color: rgba(34, 146, 208, 1); 	
 
-	--default-color: rgba(130, 130, 130, 1.0);              							
+	--default-color: var(--adaptive-accent-color);              							
 	
 	--red-color: rgba(229, 76, 45, 1);						
 	
