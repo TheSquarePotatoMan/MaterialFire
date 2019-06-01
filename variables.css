@@ -6,7 +6,9 @@
 	
 	/* type prefered colors for buttons, icons and search boxes or add custom rgba/hex code */
 	
-	--theme-color: rgba(34, 146, 208, 1); 		
+	--accent-color: rgba(34, 146, 208, 1); 	
+		
+	--adaptive-accent-color: green; 	
 
 	--default-color: rgba(130, 130, 130, 1.0);              							
 	
@@ -33,7 +35,7 @@
 	
 	 /* type 'block' to make tab line visible, type 'none' to remove it */
 	
-	--line-above-tab: none;                               
+	--line-above-tab: block;                               
 	
 	
 	

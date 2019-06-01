@@ -89,7 +89,7 @@ scrollbar {
                                                        */ 
 
 #tabbrowser-tabs {
-    --tab-loading-fill: var(--theme-color) !important;
+    --tab-loading-fill: var(--adaptive-accent-color) !important;
 }
 
 .tabbrowser-tab::after, 
@@ -197,7 +197,7 @@ scrollbar {
 
 #main-window .tab-line {
   display: var(--line-above-tab) !important;
-  background-color: var(--theme-color) !important;
+  background-color: var(--adaptive-accent-color) !important;
   transition: transform calc(var(--active-animation)*2) !important;
 }
  
@@ -288,7 +288,7 @@ toolbarbutton:not([disabled]):not(#stop-button):not(.close-icon):hover,
 button:hover:not([disabled]) > .button-icon,
 toolbarbutton:not([disabled]):not(#stop-button):not(.close-icon):active, 
 button:not([disabled]):active {
-    fill: var(--theme-color) !important;
+    fill: var(--adaptive-accent-color) !important;
 }
 
 toolbarbutton[open=true]:not([disabled]):not(#stop-button):not(.close-icon), 
@@ -311,11 +311,11 @@ button:not([disabled]):active,
 
 #star-button[starred] {
 	transition: opacity var(--unhover-animation), transform var(--unhover-animation), width 0s !important;
-	fill: var(--theme-color) !important;
+	fill: var(--adaptive-accent-color) !important;
 }
 
 #star-button-animatable-image {
-	    --toolbarbutton-icon-fill-attention: var(--theme-color) !important;
+	    --toolbarbutton-icon-fill-attention: var(--adaptive-accent-color) !important;
 }
 
 :root:not([uidensity="touch"]) #urlbar:not(:hover):not([focused=true]) .urlbar-icon:not(.urlbar-history-dropmarker):not([tooltiptext="Edit this bookmark (Ctrl+D)"]) {
@@ -397,7 +397,7 @@ button:not([disabled]):active,
 
 #widget-overflow-fixed-list .toolbarbutton-1:hover > .toolbarbutton-icon, 
 .subviewbutton:not(.bookmark-item):hover > .toolbarbutton-icon {
-	fill: var(--theme-color) !important;
+	fill: var(--adaptive-accent-color) !important;
 	transition: var(--hover-animation) !important;
 }
 
@@ -412,14 +412,15 @@ button:not([disabled]):active,
 
 
 /* ----------------------new tab button styling  */
+ 
 
-
-:root .tabs-newtab-button:not(:active) { 
-  transform: scale(0.8) !important;
+:root .tabs-newtab-button:not(:active) .toolbarbutton-icon,
+#new-tab-button:not(:active) .toolbarbutton-icon { 								/*ID selects element seperate from above class*/
+  transform: scale(0.75) !important;
 }
 
-.tabs-newtab-button:active .toolbarbutton-icon {
-  transform: scale(1.2)  !important;
+.tabs-newtab-button:active .toolbarbutton-icon,
+#new-tab-button:active .toolbarbutton-icon {									/*increasing scale above 1 bugs when the view tabs button appears */ 						        
   transition: transform var(--active-animation) !important;
 }
 
@@ -458,7 +459,7 @@ textbox:not([focused=true]) {
 
 .autocomplete-richlistitem[selected],
 treechildren.searchbar-treebody::-moz-tree-row(selected) {
-  background-color: var(--theme-color) !important;
+  background-color: var(--adaptive-accent-color) !important;
 }
 
 textbox:not(#urlbar):not([focused=true]):hover {
@@ -514,7 +515,7 @@ textbox[focused=true]:-moz-lwtheme-brighttext {
 }
 
 .panel-footer > button:not([disabled])[default] {
-    background-color: var(--theme-color) !important;
+    background-color: var(--adaptive-accent-color) !important;
 }
 
 /* -----------------------------6------------------------------------- */
@@ -599,7 +600,7 @@ box {
 }
 
 #customization-done-button {
-	background-color: var(--theme-color) !important;
+	background-color: var(--adaptive-accent-color) !important;
 }
 
 

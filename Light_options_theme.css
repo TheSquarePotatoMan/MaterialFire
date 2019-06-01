@@ -37,7 +37,7 @@
 }
 
 :root .checkbox-check[checked=true], .radio-check[selected] {
-	background-color: var(--theme-color) !important;
+	background-color: var(--accent-color) !important;
 	list-style-image: none !important;
 	box-shadow: none !important;
 }
@@ -59,7 +59,7 @@
 }
 
 :root .category .category-icon, .text-link .sidebar-footer-icon {
-	fill: var(--theme-color) !important;
+	fill: var(--accent-color) !important;
 	transition: transform var(--hover-animation) !important;
 }
 
@@ -69,7 +69,7 @@
 }
 
 :root .category[current=true] .category-name {
-	color: var(--theme-color) !important;
+	color: var(--accent-color) !important;
 	font-weight: bold !important;
 }
 
