@@ -417,6 +417,7 @@ button:not([disabled]):active,
 :root .tabs-newtab-button:not(:active) .toolbarbutton-icon,
 #new-tab-button:not(:active) .toolbarbutton-icon { 								/*ID selects element seperate from above class*/
   transform: scale(0.75) !important;
+  transition: transform var(--active-animation) !important;
 }
 
 .tabs-newtab-button:active .toolbarbutton-icon,
@@ -600,7 +601,7 @@ box {
 }
 
 #customization-done-button {
-	background-color: var(--adaptive-accent-color) !important;
+	background-color: var(--accent-color) !important;
 }
 
 
