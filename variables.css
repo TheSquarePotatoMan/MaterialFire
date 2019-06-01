@@ -6,9 +6,9 @@
 	
 	/* type prefered colors for buttons, icons and search boxes or add custom rgba/hex code */
 	
-	--accent-color: rgba(34, 146, 208, 1); 	
+	--accent-color: var(--adaptive-accent-color); 	
 		
-	--adaptive-accent-color: var(--adaptive-accent-color); 	
+	--adaptive-accent-color: rgba(34, 146, 208, 1); 	
 
 	--default-color: rgba(130, 130, 130, 1);              							
 	
