@@ -8,13 +8,13 @@
 	
 	--accent-color: rgba(34, 146, 208, 1); 	
 		
-	--adaptive-accent-color: rgba(34, 146, 208, 1); 	
+	--adaptive-accent-color: var(--adaptive-accent-color); 	
 
-	--default-color: var(--adaptive-accent-color);              							
+	--default-color: rgba(130, 130, 130, 1);              							
 	
 	--red-color: rgba(229, 76, 45, 1);						
 	
-	--disabled-active-color: rgba(229, 76, 45, 1.0);	  
+	--disabled-active-color: rgba(229, 76, 45, 1);	  
 	
 	--hover-textboxcolor: rgba(130, 130, 130, 0.2);			
 	
