@@ -6,15 +6,15 @@
 	
 	/* type prefered colors for buttons, icons and search boxes or add custom rgba/hex code */
 	
-	--accent-color: var(--adaptive-accent-color); 	
+	--accent-color: -moz-win-accentcolor; 	
 		
-	--adaptive-accent-color: rgba(34, 146, 208, 1); 	
+	--adaptive-accent-color: #0092D0; 	
 
-	--default-color: rgba(130, 130, 130, 1);              							
+	--default-color: #828282;              							
 	
-	--red-color: rgba(229, 76, 45, 1);						
+	--red-color: #E5462D;						
 	
-	--disabled-active-color: rgba(229, 76, 45, 1);	  
+	--disabled-active-color: #E54C2D;	  
 	
 	--hover-textboxcolor: rgba(130, 130, 130, 0.2);			
 	
@@ -42,10 +42,11 @@
 	/* :::::::::::::::::::::::::: searchbox and UI shadows :::::::::::::::::::::::::::: */
 			/* the first number is x-offset, the second number is y-offset and the third number is shadow spread */
 			
-    --shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);				
+    --shadow: 0 0 3px rgba(0, 0, 0, 0.2);				
 	--inshadow: inset 0px 1px 3px rgba(0, 0, 0, 0.3);
 	--bottom-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
 	--top-shadow: 0px -2px 2px rgba(0, 0, 0, 0.1);
+	--tab-shadow:  0px 0px 3px rgba(0, 0, 0, 0.2);
 
 	/* :::::::::::::::::::::::::: misc :::::::::::::::::::::::::::: */
 	
@@ -53,5 +54,14 @@
 	
 	--unhover-opacity: 0.65;								/* type prefered default opacity for urlbars, tabs and bookmarks */
 	
-	--disabled-opacity: 0.5;								/* type prefered default opacity for disabled buttons */
+	/*! --disabled-opacity: 0.5; */								/* type prefered default opacity for disabled buttons */
+}
+
+
+/* :::::::::::::::::::::::::: seperate fill variable for private browsing :::::::::::::::::::::::::::: */
+
+#main-window[privatebrowsingmode] {
+	--accent-color: #8d20ae; 	
+		
+	--adaptive-accent-color: var(--accent-color); 	
 }
